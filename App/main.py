@@ -37,3 +37,48 @@ def create_app(overrides={}):
     
     app.app_context().push()
     return app
+
+# @app.route('/')
+# def index():
+#     form = SignUpForm()
+#     return render_template('signup.html', form=form)
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        # Handle sign-up form submission
+        email = request.form['email']
+        password = request.form['password']
+        # Add user to database or perform other sign-up logic
+        flash('Sign-up successful!')
+        return redirect(url_for('home'))
+    return render_template('signup.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        # Handle login form submission
+        email = request.form['email']
+        password = request.form['password']
+        # Authenticate user and set session cookie
+        flash('Login successful!')
+        return redirect(url_for('home'))
+    return render_template('login.html')
+
+@app.route('/routines')
+def workout_routines():
+    routines = WorkoutRoutine.query.all()
+    return render_template('workout_routine.html', routines=routines)
+
+@app.route('/routines/<int:routine_id>/edit')
+def edit_routine(routine_id):
+    routine = WorkoutRoutine.query.get_or_404(routine_id)
+    return render_template('edit_routine.html', routine=routine)
+
+@app.route('/routines/<int:routine_id>/delete', methods=['POST'])
+def delete_routine(routine_id):
+    routine = WorkoutRoutine.query.get_or_404(routine_id)
+    db.session.delete(routine)
+    db.session.commit()
+    flash('Routine deleted successfully.', 'success')
+    return redirect(url_for('workout_routines'))
