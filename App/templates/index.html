@@ -1,26 +1,30 @@
-<!-- when changing keeping checking for internal server error...
-if you get that error or any page not running errors undo your changes bc
-the templates are sensitive to jinga and flask 
-i took hours to even get it to work so if you break it YOU better fix it (inserts crying emoji) 
-ALSOOOOOOOOO use this block content to add your data changing may result in issues 
-you can try adding blobks within if needed -->
-
-
-{% extends "layout.html" %}
-{% block title %}workout App{% endblock %}
-{% block page %}workout App{% endblock %}
-
-{{ super() }}
+{% block title %}Sign Up{% endblock %}
 
 {% block content %}
-    <h1></h1>
-    <ul id="nav-mobile" class="left">
-        <li><a href="/">Home</a></li>
-        <li><a href="/workout">workouts</a></li>
-        <li><a href="/routine">Workout Routines</a></li>
-        <li><a href="/signup">sign up</a></li>
-        <li><a href="/login">login</a></li>
-    </ul>
+  <h1>Sign Up</h1>
+  <form method="POST" action="/signup">
+    <div class="input-field">
+      <input type="text" name="username" required>
+      <label for="username">Username</label>
+    </div>
+    <div class="input-field">
+      <input type="email" name="email" required>
+      <label for="email">Email</label>
+    </div>
+    <div class="input-field">
+      <input type="password" name="password" required>
+      <label for="password">Password</label>
+    </div>
+    <button type="submit" class="btn waves-effect waves-light">Sign Up</button>
+    
+  </form>
 {% endblock %}
 
-
+<ul id="nav-mobile" class="left">
+  <li><a href="/temp">Home</a></li>
+  <li><a href="/workout">workouts</a></li>
+  <li><a href="/routine">workout routine</a></li>
+  <li><a href="/logout">Logout</a></li>
+  <li><a href="/login">login</a></li>
+  <li><a href="/view">routine view</a></li>
+</ul>

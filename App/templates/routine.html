@@ -1,33 +1,280 @@
-<!-- when changing keeping checking for internal server error...
-if you get that error or any page not running errors undo your changes bc
-the templates are sensitive to jinga 
-which is weird asf bc it supposed to work with the flask route but idk nah 
-i took hours to even get it to work so if you break it YOU better fix it (inserts crying emoji) -->
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Workout Routines</title>
-  </head>
-  <body>
-    <h1>Available Workout Routines</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Routine 1</td>
-          <td>This is Routine 1</td>
-        </tr>
-        <tr>
-          <td>Routine 2</td>
-          <td>This is Routine 2</td>
-        </tr>
-      </tbody>
-    </table>
-  </body>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='routine.css') }}">
+  <title>Weekly Workout Routine</title>
+</head>
+<body>
+
+<nav class="bar">
+    <div class="nav-wrapper">
+        <a href="#!" class="brand-logo center">{% block page %}{% endblock %}</a>
+        <ul id="nav-mobile" class="left">
+          <li><a href="/temp">Home</a></li>
+          <li><a href="/workout">workouts</a></li>
+          <li><a href="/routine">workout routine</a></li>
+          <li><a href="/view">routine view</a></li>
+        </ul>
+    </div>
+</nav>
+
+<h1>Weekly Workout Routine</h1>
+
+<!-- Monday -->
+<div class="workout-card" id="monday">
+  <h2>Monday</h2>
+  <label for="monday-muscle-groups">Muscle Groups:</label>
+  <select id="monday-muscle-groups">
+    <option value="abdominals">Abdominals</option>
+    <option value="abductors">Abductors</option>
+    <option value="adductors">Adductors</option>
+    <option value="biceps">Biceps</option>
+    <option value="calves">Calves</option>
+    <option value="chest">Chest</option>
+    <option value="forearms">Forearms</option>
+    <option value="glutes">Glutes</option>
+    <option value="hamstrings">Hamstrings</option>
+    <option value="lats">Lats</option>
+    <option value="lower_back">Lower Back</option>
+    <option value="middle_back">Middle Back</option>
+    <option value="neck">Neck</option>
+    <option value="quadriceps">Quadriceps</option>
+    <option value="traps">Traps</option>
+    <option value="triceps">Triceps</option>
+  </select>
+  <button onclick="fetchAndDisplay('monday')">Fetch Workouts</button>
+  <div id="monday-workouts"></div>
+  <ul id="monday-routine-list"></ul> <!-- List to add exercises -->
+</div>
+
+<!-- Tuesday -->
+<div class="workout-card" id="tuesday">
+  <h2>Tuesday</h2>
+  <label for="tuesday-muscle-groups">Muscle Groups:</label>
+  <select id="tuesday-muscle-groups">
+    <option value="abdominals">Abdominals</option>
+    <option value="abductors">Abductors</option>
+    <option value="adductors">Adductors</option>
+    <option value="biceps">Biceps</option>
+    <option value="calves">Calves</option>
+    <option value="chest">Chest</option>
+    <option value="forearms">Forearms</option>
+    <option value="glutes">Glutes</option>
+    <option value="hamstrings">Hamstrings</option>
+    <option value="lats">Lats</option>
+    <option value="lower_back">Lower Back</option>
+    <option value="middle_back">Middle Back</option>
+    <option value="neck">Neck</option>
+    <option value="quadriceps">Quadriceps</option>
+    <option value="traps">Traps</option>
+    <option value="triceps">Triceps</option>
+  </select>
+  <button onclick="fetchAndDisplay('tuesday')">Fetch Workouts</button>
+  <div id="tuesday-workouts"></div>
+  <ul id="tuesday-routine-list"></ul> <!-- List to add exercises -->
+</div>
+
+<!-- Wednesday -->
+<div class="workout-card" id="wednesday">
+  <h2>Wednesday</h2>
+  <label for="wednesday-muscle-groups">Muscle Groups:</label>
+  <select id="wednesday-muscle-groups">
+    <option value="abdominals">Abdominals</option>
+    <option value="abductors">Abductors</option>
+    <option value="adductors">Adductors</option>
+    <option value="biceps">Biceps</option>
+    <option value="calves">Calves</option>
+    <option value="chest">Chest</option>
+    <option value="forearms">Forearms</option>
+    <option value="glutes">Glutes</option>
+    <option value="hamstrings">Hamstrings</option>
+    <option value="lats">Lats</option>
+    <option value="lower_back">Lower Back</option>
+    <option value="middle_back">Middle Back</option>
+    <option value="neck">Neck</option>
+    <option value="quadriceps">Quadriceps</option>
+    <option value="traps">Traps</option>
+    <option value="triceps">Triceps</option>
+  </select>
+  <button onclick="fetchAndDisplay('wednesday')">Fetch Workouts</button>
+  <div id="wednesday-workouts"></div>
+  <ul id="wednesday-routine-list"></ul> <!-- List to add exercises -->
+</div>
+
+<!-- Thursday -->
+<div class="workout-card" id="thursday">
+  <h2>Thursday</h2>
+  <label for="thursday-muscle-groups">Muscle Groups:</label>
+  <select id="thursday-muscle-groups">
+    <option value="abdominals">Abdominals</option>
+    <option value="abductors">Abductors</option>
+    <option value="adductors">Adductors</option>
+    <option value="biceps">Biceps</option>
+    <option value="calves">Calves</option>
+    <option value="chest">Chest</option>
+    <option value="forearms">Forearms</option>
+    <option value="glutes">Glutes</option>
+    <option value="hamstrings">Hamstrings</option>
+    <option value="lats">Lats</option>
+    <option value="lower_back">Lower Back</option>
+    <option value="middle_back">Middle Back</option>
+    <option value="neck">Neck</option>
+    <option value="quadriceps">Quadriceps</option>
+    <option value="traps">Traps</option>
+    <option value="triceps">Triceps</option>
+  </select>
+  <button onclick="fetchAndDisplay('thursday')">Fetch Workouts</button>
+  <div id="thursday-workouts"></div>
+  <ul id="thursday-routine-list"></ul> <!-- List to add exercises -->
+</div>
+
+<!-- Friday -->
+<div class="workout-card" id="friday">
+  <h2>Friday</h2>
+  <label for="friday-muscle-groups">Muscle Groups:</label>
+  <select id="friday-muscle-groups">
+    <option value="abdominals">Abdominals</option>
+    <option value="abductors">Abductors</option>
+    <option value="adductors">Adductors</option>
+    <option value="biceps">Biceps</option>
+    <option value="calves">Calves</option>
+    <option value="chest">Chest</option>
+    <option value="forearms">Forearms</option>
+    <option value="glutes">Glutes</option>
+    <option value="hamstrings">Hamstrings</option>
+    <option value="lats">Lats</option>
+    <option value="lower_back">Lower Back</option>
+    <option value="middle_back">Middle Back</option>
+    <option value="neck">Neck</option>
+    <option value="quadriceps">Quadriceps</option>
+    <option value="traps">Traps</option>
+    <option value="triceps">Triceps</option>
+  </select>
+  <button onclick="fetchAndDisplay('friday')">Fetch Workouts</button>
+  <div id="friday-workouts"></div>
+  <ul id="friday-routine-list"></ul> <!-- List to add exercises -->
+</div>
+
+<!-- Saturday -->
+<div class="workout-card" id="saturday">
+  <h2>Saturday</h2>
+  <label for="saturday-muscle-groups">Muscle Groups:</label>
+  <select id="saturday-muscle-groups">
+    <option value="abdominals">Abdominals</option>
+    <option value="abductors">Abductors</option>
+    <option value="adductors">Adductors</option>
+    <option value="biceps">Biceps</option>
+    <option value="calves">Calves</option>
+    <option value="chest">Chest</option>
+    <option value="forearms">Forearms</option>
+    <option value="glutes">Glutes</option>
+    <option value="hamstrings">Hamstrings</option>
+    <option value="lats">Lats</option>
+    <option value="lower_back">Lower Back</option>
+    <option value="middle_back">Middle Back</option>
+    <option value="neck">Neck</option>
+    <option value="quadriceps">Quadriceps</option>
+    <option value="traps">Traps</option>
+    <option value="triceps">Triceps</option>
+  </select>
+  <button onclick="fetchAndDisplay('saturday')">Fetch Workouts</button>
+  <div id="saturday-workouts"></div>
+  <ul id="saturday-routine-list"></ul> <!-- List to add exercises -->
+</div>
+
+<!-- Sunday -->
+<div class="workout-card" id="sunday">
+  <h2>Sunday</h2>
+  <label for="sunday-muscle-groups">Muscle Groups:</label>
+  <select id="sunday-muscle-groups">
+    <option value="abdominals">Abdominals</option>
+    <option value="abductors">Abductors</option>
+    <option value="adductors">Adductors</option>
+    <option value="biceps">Biceps</option>
+    <option value="calves">Calves</option>
+    <option value="chest">Chest</option>
+    <option value="forearms">Forearms</option>
+    <option value="glutes">Glutes</option>
+    <option value="hamstrings">Hamstrings</option>
+    <option value="lats">Lats</option>
+    <option value="lower_back">Lower Back</option>
+    <option value="middle_back">Middle Back</option>
+    <option value="neck">Neck</option>
+    <option value="quadriceps">Quadriceps</option>
+    <option value="traps">Traps</option>
+    <option value="triceps">Triceps</option>
+  </select>
+  <button onclick="fetchAndDisplay('sunday')">Fetch Workouts</button>
+  <div id="sunday-workouts"></div>
+  <ul id="sunday-routine-list"></ul> <!-- List to add exercises -->
+</div>
+
+
+<button onclick="saveRoutine()">Save Routine</button> <!-- Button to save the routine -->
+
+<script>
+  // Function to fetch workouts from the API for a given muscle group
+  function fetchWorkoutsByMuscle(muscle) {
+    var api_url = 'https://api.api-ninjas.com/v1/exercises?muscle=' + muscle;
+    return fetch(api_url, {
+      headers: {
+        'X-Api-Key': 'MNTs3LU671IWeM9bxMaF0A==thhK8SBpIUrdU0y4'
+      }
+    }).then(response => response.json());
+  }
+
+  // Function to fetch and display workouts for a specific day
+  function fetchAndDisplay(day) {
+    var muscle = document.getElementById(day + "-muscle-groups").value;
+    var container = document.getElementById(day + "-workouts");
+    container.innerHTML = ""; // Clear previous workouts
+    fetchWorkoutsByMuscle(muscle)
+      .then(exercises => {
+        exercises.forEach(exercise => {
+          var exerciseElement = document.createElement("div");
+          var exerciseName = document.createElement("span");
+          exerciseName.textContent = exercise.name;
+          var addButton = document.createElement("button");
+          addButton.textContent = "Add";
+          addButton.addEventListener("click", function() {
+            addExerciseToRoutine(exercise.name, day);
+          });
+          exerciseElement.appendChild(exerciseName);
+          exerciseElement.appendChild(addButton);
+          container.appendChild(exerciseElement);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching exercises:', error);
+      });
+  }
+
+  // Function to add exercise to routine list
+  function addExerciseToRoutine(exerciseName, day) {
+    var routineList = document.getElementById(day + "-routine-list");
+    var exerciseListItem = document.createElement("li");
+    exerciseListItem.textContent = exerciseName;
+    routineList.appendChild(exerciseListItem);
+  }
+
+  // Function to save the routine to localStorage and redirect to routineview.html
+  function saveRoutine() {
+    var allDays = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+    var allExercises = {};
+    allDays.forEach(day => {
+      var routineList = document.getElementById(day + "-routine-list");
+      var exercises = [];
+      routineList.childNodes.forEach(node => {
+        if (node.nodeName === "LI") {
+          exercises.push(node.textContent);
+        }
+      });
+      allExercises[day] = exercises;
+    });
+    localStorage.setItem("routine", JSON.stringify(allExercises));
+    // window.location.href = "routineview.html";
+  }
+</script>
+
+</body>
 </html>

@@ -1,0 +1,86 @@
+/* Reset default margin and padding */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #696969;
+}
+
+/* Global font styles */
+body {
+    font-family: Arial, sans-serif; /* Use a commonly available font */
+}
+
+/* Style for navigation bar */
+nav {
+    background-color: #333; /* Purple background color */
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-family: "Century Gothic", Times, serif;
+    width: 100%;
+}
+
+/* Style for brand logo */
+.brand-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #FFF; /* White color for brand logo */
+    display: block;
+    text-align: center;
+}
+
+/* Style for navigation links */
+nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: center; 
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px; /* Spacing between navigation links */
+}
+
+nav ul li a {
+    color: #FFF; /* White color for navigation links */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s; /* Smooth transition for color change */
+    justify-content: center;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    color: #9F73AB; /* Light purple color on hover */
+}
+
+/* Style for login form */
+.navbar-form {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-form input[type="text"],
+.navbar-form input[type="password"] {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.navbar-form button {
+    background-color: #673AB7; /* Purple color for button background */
+    color: #FFF; /* White color for button text */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.navbar-form button:hover {
+    background-color: #9F73AB; /* Light purple color on hover */
+}
+
+/* Additional styles */
+/* Add your additional styles here */
