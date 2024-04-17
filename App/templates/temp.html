@@ -1,0 +1,106 @@
+<!-- this is the home page -->
+
+{% extends "layout.html" %}
+{% block title %}Workout App{% endblock %}
+{% block page %}Workout App{% endblock %}
+
+{{ super() }}
+
+{% block content %}
+    <!-- Search Bar in Navigation -->
+    <nav>
+        <!-- Search Form -->
+        <form class="navbar-form" onsubmit="searchExercises(); return false;">
+            <input type="text" id="search-input" placeholder="Search for exercises...">
+            <button type="submit">Search</button>
+        </form>
+    </nav>
+
+    <!-- Featured Workouts -->
+    <section class="featured-workouts">
+        <h2>Featured Workouts</h2>
+        <div id="workouts-list" class="workout-card">
+            <!-- Workouts will be dynamically added here -->
+        </div>
+    </section>
+    <script>
+        // Function to fetch workouts from the API for a given muscle group
+        function fetchWorkoutsByMuscle(muscle) {
+            var api_url = 'https://api.api-ninjas.com/v1/exercises?muscle=' + muscle;
+            return fetch(api_url, {
+                headers: {
+                    'X-Api-Key': 'MNTs3LU671IWeM9bxMaF0A==thhK8SBpIUrdU0y4'
+                }
+            }).then(response => response.json());
+        }
+
+        // Function to fetch workouts from the API for all muscle groups
+        function fetchAllWorkouts() {
+            var muscleGroups = ['abdominals', 'abductors', 'adductors', 'biceps', 'calves', 'chest', 'forearms', 'glutes', 'hamstrings', 'lats', 'lower_back', 'middle_back', 'neck', 'quadriceps', 'traps', 'triceps'];
+            var apiPromises = muscleGroups.map(fetchWorkoutsByMuscle);
+
+            return Promise.all(apiPromises)
+                .then(responses => {
+                    // Flatten the array of responses into a single array of workouts
+                    return responses.reduce((acc, curr) => acc.concat(curr), []);
+                });
+        }
+
+        // Function to search exercises
+        function searchExercises() {
+            var query = document.getElementById('search-input').value.toLowerCase();
+
+            fetchAllWorkouts()
+                .then(workouts => {
+                    // Filter workouts based on search query
+                    var filteredWorkouts = workouts.filter(workout => workout.name.toLowerCase().includes(query));
+
+                    // Display filtered workouts
+                    displayWorkouts(filteredWorkouts);
+                })
+                .catch(error => console.error('Error fetching workouts:', error));
+        }
+
+        // Function to display workouts
+        function displayWorkouts(workouts) {
+            // Process the workouts and create HTML for each workout
+            var workoutsHTML = '';
+            workouts.forEach(workout => {
+                workoutsHTML += '<div class="workout">';
+                workoutsHTML += '<h3>' + workout.name + '</h3>';
+                workoutsHTML += '<p>Type: ' + workout.type + '</p>';
+                workoutsHTML += '<p>Muscle: ' + workout.muscle + '</p>';
+                workoutsHTML += '<p>Equipment: ' + workout.equipment + '</p>';
+                workoutsHTML += '<p>Difficulty: ' + workout.difficulty + '</p>';
+                // Dropdown for Instructions
+                workoutsHTML += '<div class="dropdown">';
+                workoutsHTML += '<button onclick="toggleInstructions(this)" class="dropbtn">Instructions</button>';
+                workoutsHTML += '<div class="dropdown-content" style="display:none">';
+                workoutsHTML += '<p>' + workout.instructions + '</p>';
+                workoutsHTML += '</div>';
+                workoutsHTML += '</div>';
+                // Add more details as needed
+                workoutsHTML += '</div>';
+            });
+            // Add the HTML to the workouts-list div
+            document.getElementById('workouts-list').innerHTML = workoutsHTML;
+        }
+
+        // Function to toggle instructions dropdown
+        function toggleInstructions(button) {
+            var content = button.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+
+        // Call the fetchAllWorkouts function when the page loads
+        window.onload = function() {
+            fetchAllWorkouts()
+                .then(displayWorkouts)
+                .catch(error => console.error('Error fetching workouts:', error));
+        };
+    </script>
+{% endblock %}

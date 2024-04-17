@@ -6,16 +6,41 @@
   </head>
   <body>
     <h1>Log In</h1>
-    <form id="login-form" method="POST">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <br>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-      <br>
-      <button type="submit">Log In</button>
+    <nav class="bar">
+      <div class="nav-wrapper">
+        <a class="brand-logo">{% block page %}{% endblock %}</a>
+          <ul id="nav-mobile" class="left">
+            <li><a href="/temp">Home</a></li>
+            <li><a href="/workout">workouts</a></li>
+            <li><a href="/routine">workout routine</a></li>
+            <li><a href="/logout">Logout</a></li>
+              {% if is_authenticated %}
+                <li><a href="/routine"routine></a></li>
+              {% endif %} 
+              <li><a href="/static/users">Users JS</a></li> 
+          </ul>
+          {% if is_authenticated %}
+          <ul id="nav-mobile" class="right">
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+          {% else %}
+          <form class="right navbar-form" method="POST" action="/login" style="display: flex; flex-wrap: nowrap; align-items: center; margin-right: 10px;">
+              <div class="input-field" style="margin-right: 10px;">
+                  <input placeholder="username" value="bob" name="username" type="text" class="validate" required>
+                  <label for="username">username</label>
+              </div>
+              <div class="input-field" style="margin-right: 10px;">
+                  <input placeholder="password"value="bobpass" name="password" type="password" class="validate" required>
+                  <label for="password">Password</label>
+              </div>
+              <button type="submit" class="btn waves-effect waves-light">Login</button>
+          </form>
+          {% endif %}
+          
+      </div>
+  </nav>
     </form>
-    <p>Don't have an account? <a href="{{ url_for('signup_form') }}">Sign up</a></p>
-    <p><a href="{{ url_for('home') }}">Go to home page</a></p>
   </body>
+  </html>
+  
 
