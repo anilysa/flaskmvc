@@ -63,41 +63,49 @@
     }
   }
 
-  // Function to handle edit button click
-  document.getElementById("edit-button").addEventListener("click", function() {
-    // Show delete buttons for each exercise
-    var exerciseItems = document.querySelectorAll(".card-content ul li");
-    exerciseItems.forEach(item => {
-      var deleteButton = document.createElement("button");
-      deleteButton.textContent = "Delete";
-      deleteButton.addEventListener("click", function() {
-        // Remove the exercise from the saved routine
-        var day = item.closest(".card-content").querySelector("h2").textContent;
-        var index = Array.from(item.parentNode.children).indexOf(item);
-        savedRoutine[day].splice(index, 1);
-        // Update the display
-        displayRoutine();
-      });
-      // Append delete button to the exercise item
-      item.appendChild(deleteButton);
-    });
+ // Function to handle edit button click
+document.getElementById("edit-button").addEventListener("click", function() {
+  // Remove existing confirm button if it exists
+  var existingConfirmButton = document.getElementById("confirm-button");
+  if (existingConfirmButton) {
+    existingConfirmButton.remove();
+  }
 
-    // Create confirm button
-    var confirmButton = document.createElement("button");
-    confirmButton.textContent = "Confirm";
-    confirmButton.addEventListener("click", function() {
-      // Update the routine in localStorage
-      localStorage.setItem("routine", JSON.stringify(savedRoutine));
-      // Re-render the routine display
+  // Show delete buttons for each exercise
+  var exerciseItems = document.querySelectorAll(".card-content ul li");
+  exerciseItems.forEach(item => {
+    var deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", function() {
+      // Remove the exercise from the saved routine
+      var day = item.closest(".card-content").querySelector("h2").textContent;
+      var index = Array.from(item.parentNode.children).indexOf(item);
+      savedRoutine[day].splice(index, 1);
+      // Update the display
       displayRoutine();
     });
-
-    // Append confirm button to the page
-    document.body.appendChild(confirmButton);
+    // Append delete button to the exercise item
+    item.appendChild(deleteButton);
   });
+
+  // Create confirm button
+  var confirmButton = document.createElement("button");
+  confirmButton.id = "confirm-button"; // Add id for easy removal
+  confirmButton.textContent = "Confirm";
+  confirmButton.addEventListener("click", function() {
+    // Update the routine in localStorage
+    localStorage.setItem("routine", JSON.stringify(savedRoutine));
+    // Re-render the routine display
+    displayRoutine();
+  });
+
+  // Append confirm button to the page
+  document.body.appendChild(confirmButton);
+});
 
   // Call the displayRoutine function when the page loads
   displayRoutine();
+  
 </script>
 
 </body>

@@ -20,32 +20,34 @@
 
 <h1>Weekly Workout Routine</h1>
 
-<!-- Monday -->
-<div class="workout-card" id="monday">
-  <h2>Monday</h2>
-  <label for="monday-muscle-groups">Muscle Groups:</label>
-  <select id="monday-muscle-groups">
-    <option value="abdominals">Abdominals</option>
-    <option value="abductors">Abductors</option>
-    <option value="adductors">Adductors</option>
-    <option value="biceps">Biceps</option>
-    <option value="calves">Calves</option>
-    <option value="chest">Chest</option>
-    <option value="forearms">Forearms</option>
-    <option value="glutes">Glutes</option>
-    <option value="hamstrings">Hamstrings</option>
-    <option value="lats">Lats</option>
-    <option value="lower_back">Lower Back</option>
-    <option value="middle_back">Middle Back</option>
-    <option value="neck">Neck</option>
-    <option value="quadriceps">Quadriceps</option>
-    <option value="traps">Traps</option>
-    <option value="triceps">Triceps</option>
-  </select>
-  <button onclick="fetchAndDisplay('monday')">Fetch Workouts</button>
-  <div id="monday-workouts"></div>
-  <ul id="monday-routine-list"></ul> <!-- List to add exercises -->
-</div>
+<div class="bar">
+  <!-- Monday -->
+  <div class="workout-card" id="monday">
+    <h2>Monday</h2>
+    <label for="monday-muscle-groups">Muscle Groups:</label>
+    <select id="monday-muscle-groups">
+      <option value="abdominals">Abdominals</option>
+      <option value="abductors">Abductors</option>
+      <option value="adductors">Adductors</option>
+      <option value="biceps">Biceps</option>
+      <option value="calves">Calves</option>
+      <option value="chest">Chest</option>
+      <option value="forearms">Forearms</option>
+      <option value="glutes">Glutes</option>
+      <option value="hamstrings">Hamstrings</option>
+      <option value="lats">Lats</option>
+      <option value="lower_back">Lower Back</option>
+      <option value="middle_back">Middle Back</option>
+      <option value="neck">Neck</option>
+      <option value="quadriceps">Quadriceps</option>
+      <option value="traps">Traps</option>
+      <option value="triceps">Triceps</option>
+    </select>
+    <button onclick="fetchAndDisplay('monday')">Fetch Workouts</button>
+    <button onclick="toggleExerciseList('monday')">Close Exercises</button>
+    <div class="exercise-list" id="monday-exercises"></div> <!-- Display fetched exercises here -->
+    <ul id="monday-routine-list"></ul> <!-- List to add exercises -->
+  </div>
 
 <!-- Tuesday -->
 <div class="workout-card" id="tuesday">
@@ -70,7 +72,8 @@
     <option value="triceps">Triceps</option>
   </select>
   <button onclick="fetchAndDisplay('tuesday')">Fetch Workouts</button>
-  <div id="tuesday-workouts"></div>
+  <button onclick="toggleExerciseList('tuesday')">Close Exercises</button>
+  <div class="exercise-list" id="tuesday-exercises"></div> <!-- Display fetched exercises here -->
   <ul id="tuesday-routine-list"></ul> <!-- List to add exercises -->
 </div>
 
@@ -97,9 +100,10 @@
     <option value="triceps">Triceps</option>
   </select>
   <button onclick="fetchAndDisplay('wednesday')">Fetch Workouts</button>
-  <div id="wednesday-workouts"></div>
-  <ul id="wednesday-routine-list"></ul> <!-- List to add exercises -->
-</div>
+  <button onclick="toggleExerciseList('wednesday')">Close Exercises</button>
+    <div class="exercise-list" id="wednesday-exercises"></div> <!-- Display fetched exercises here -->
+    <ul id="wednesday-routine-list"></ul> <!-- List to add exercises -->
+  </div>
 
 <!-- Thursday -->
 <div class="workout-card" id="thursday">
@@ -124,9 +128,10 @@
     <option value="triceps">Triceps</option>
   </select>
   <button onclick="fetchAndDisplay('thursday')">Fetch Workouts</button>
-  <div id="thursday-workouts"></div>
-  <ul id="thursday-routine-list"></ul> <!-- List to add exercises -->
-</div>
+  <button onclick="toggleExerciseList('thursday')">Close Exercises</button>
+    <div class="exercise-list" id="thursday-exercises"></div> <!-- Display fetched exercises here -->
+    <ul id="thursday-routine-list"></ul> <!-- List to add exercises -->
+  </div>
 
 <!-- Friday -->
 <div class="workout-card" id="friday">
@@ -151,7 +156,8 @@
     <option value="triceps">Triceps</option>
   </select>
   <button onclick="fetchAndDisplay('friday')">Fetch Workouts</button>
-  <div id="friday-workouts"></div>
+  <button onclick="toggleExerciseList('friday')">Close Exercises</button>
+  <div class="exercise-list" id="friday-exercises"></div> <!-- Display fetched exercises here -->
   <ul id="friday-routine-list"></ul> <!-- List to add exercises -->
 </div>
 
@@ -178,9 +184,10 @@
     <option value="triceps">Triceps</option>
   </select>
   <button onclick="fetchAndDisplay('saturday')">Fetch Workouts</button>
-  <div id="saturday-workouts"></div>
-  <ul id="saturday-routine-list"></ul> <!-- List to add exercises -->
-</div>
+  <button onclick="toggleExerciseList('saturday')">Close Exercises</button>
+    <div class="exercise-list" id="saturday-exercises"></div> <!-- Display fetched exercises here -->
+    <ul id="saturday-routine-list"></ul> <!-- List to add exercises -->
+  </div>
 
 <!-- Sunday -->
 <div class="workout-card" id="sunday">
@@ -205,14 +212,26 @@
     <option value="triceps">Triceps</option>
   </select>
   <button onclick="fetchAndDisplay('sunday')">Fetch Workouts</button>
-  <div id="sunday-workouts"></div>
-  <ul id="sunday-routine-list"></ul> <!-- List to add exercises -->
+  <button onclick="toggleExerciseList('sunday')">Close Exercises</button>
+    <div class="exercise-list" id="sunday-exercises"></div> <!-- Display fetched exercises here -->
+    <ul id="sunday-routine-list"></ul> <!-- List to add exercises -->
+  </div>
 </div>
 
 
-<button onclick="saveRoutine()">Save Routine</button> <!-- Button to save the routine -->
+<div class="save-button-container">
+  <button onclick="saveRoutine()" class="save-button">Save Routine</button>
+</div>
 
 <script>
+  function toggleExerciseList(day) {
+    var exerciseList = document.getElementById(day + "-exercises");
+    if (exerciseList.style.display === "none") {
+      exerciseList.style.display = "block";
+    } else {
+      exerciseList.style.display = "none";
+    }
+  }
   // Function to fetch workouts from the API for a given muscle group
   function fetchWorkoutsByMuscle(muscle) {
     var api_url = 'https://api.api-ninjas.com/v1/exercises?muscle=' + muscle;
@@ -223,39 +242,39 @@
     }).then(response => response.json());
   }
 
-  // Function to fetch and display workouts for a specific day
-  function fetchAndDisplay(day) {
-    var muscle = document.getElementById(day + "-muscle-groups").value;
-    var container = document.getElementById(day + "-workouts");
-    container.innerHTML = ""; // Clear previous workouts
-    fetchWorkoutsByMuscle(muscle)
-      .then(exercises => {
-        exercises.forEach(exercise => {
-          var exerciseElement = document.createElement("div");
-          var exerciseName = document.createElement("span");
-          exerciseName.textContent = exercise.name;
-          var addButton = document.createElement("button");
-          addButton.textContent = "Add";
-          addButton.addEventListener("click", function() {
-            addExerciseToRoutine(exercise.name, day);
-          });
-          exerciseElement.appendChild(exerciseName);
-          exerciseElement.appendChild(addButton);
-          container.appendChild(exerciseElement);
+ // Function to fetch and display workouts for a specific day
+function fetchAndDisplay(day) {
+  var muscle = document.getElementById(day + "-muscle-groups").value;
+  var container = document.getElementById(day + "-exercises");
+  container.innerHTML = ""; // Clear previous exercises
+  fetchWorkoutsByMuscle(muscle)
+    .then(exercises => {
+      exercises.forEach(exercise => {
+        var exerciseElement = document.createElement("div");
+        var exerciseName = document.createElement("span");
+        exerciseName.textContent = exercise.name;
+        var addButton = document.createElement("button");
+        addButton.textContent = "Add";
+        addButton.addEventListener("click", function() {
+          addExerciseToRoutine(exercise.name, day);
         });
-      })
-      .catch(error => {
-        console.error('Error fetching exercises:', error);
+        exerciseElement.appendChild(exerciseName);
+        exerciseElement.appendChild(addButton);
+        container.appendChild(exerciseElement);
       });
-  }
+    })
+    .catch(error => {
+      console.error('Error fetching exercises:', error);
+    });
+}
 
-  // Function to add exercise to routine list
-  function addExerciseToRoutine(exerciseName, day) {
-    var routineList = document.getElementById(day + "-routine-list");
-    var exerciseListItem = document.createElement("li");
-    exerciseListItem.textContent = exerciseName;
-    routineList.appendChild(exerciseListItem);
-  }
+// Function to add exercise to routine list
+function addExerciseToRoutine(exerciseName, day) {
+  var routineList = document.getElementById(day + "-routine-list");
+  var exerciseListItem = document.createElement("li");
+  exerciseListItem.textContent = exerciseName;
+  routineList.appendChild(exerciseListItem);
+}
 
   // Function to save the routine to localStorage and redirect to routineview.html
   function saveRoutine() {

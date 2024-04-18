@@ -1,0 +1,97 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #696969;
+}
+
+/* Global font styles */
+body {
+    font-family: Arial, sans-serif; /* Use a commonly available font */
+}
+
+/* signup.css */
+
+/* Style the form container */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+  }
+  
+  /* Style the input fields */
+  .input-field {
+    margin-bottom: 20px;
+  }
+  
+  .input-field input {
+    width: calc(100% - 20px); /* Adjusted width */
+    padding: 8px; /* Adjusted padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .input-field input:focus {
+    outline: none;
+    border-color: #5c87d6;
+  }
+  
+  /* Style the labels */
+  .input-field label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Style the submit button */
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style the navigation links */
+  ul#nav-mobile {
+    list-style-type: none;
+  }
+  
+  ul#nav-mobile li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  ul#nav-mobile li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  ul#nav-mobile li a:hover {
+    color: #4caf50;
+  }
+  
+
+/* Style the card container */
+.card {
+max-width: 400px;
+margin: 100px auto; 
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+
+  

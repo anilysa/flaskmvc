@@ -1,24 +1,30 @@
-{% block title %}Sign Up{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signup.css') }}">
+</head>
+<body>
 
-{% block content %}
-  <h1>Sign Up</h1>
-  <form method="POST" action="/signup">
-    <div class="input-field">
-      <input type="text" name="username" required>
-      <label for="username">Username</label>
-    </div>
-    <div class="input-field">
-      <input type="email" name="email" required>
-      <label for="email">Email</label>
-    </div>
-    <div class="input-field">
-      <input type="password" name="password" required>
-      <label for="password">Password</label>
-    </div>
-    <button type="submit" class="btn waves-effect waves-light">Sign Up</button>
-    
-  </form>
-{% endblock %}
+<div class="card">
+  <div class="card-content">
+    <h1>Sign Up</h1>
+    <form method="POST" action="/signup" class="signup-form">
+      <div class="input-field">
+        <input type="text" name="username" required>
+        <label for="username">Username</label>
+      </div>
+      <div class="input-field">
+        <input type="email" name="email" required>
+        <label for="email">Email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" name="password" required>
+        <label for="password">Password</label>
+      </div>
+      <button class="btn waves-effect waves-light"><a href="/temp">Sign Up</a></button>
+    </form>
+  </div>
+</div>
 
 <ul id="nav-mobile" class="left">
   <li><a href="/temp">Home</a></li>
@@ -28,3 +34,6 @@
   <li><a href="/login">login</a></li>
   <li><a href="/view">routine view</a></li>
 </ul>
+
+</body>
+</html>

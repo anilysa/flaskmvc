@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: #696969;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 /* Global font styles */
@@ -56,3 +57,81 @@ nav ul li a:hover {
     color: #9F73AB; /* Light purple color on hover */
 }
 
+/* Style for cards container */
+.bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Style for individual card */
+.workout-card {
+    background-color: #FFF;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.workout-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for card title */
+.workout-card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Style for dropdowns */
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Style for dropdown arrow icon */
+select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Style for dropdown options */
+option {
+    padding: 10px;
+}
+.save-button-container {
+    text-align: center;
+    margin-top: 20px; /* Adjust this value as needed */
+  }
+  
+  .save-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .save-button:hover {
+    background-color: #555;
+  }
