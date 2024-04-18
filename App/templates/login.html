@@ -1,25 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
-  </head>
-  <body style="display: flex; flex-direction: column; align-items: center;">
+</head>
+<body>
+
+    <header>
+        <h1> Workout App 
+          <img src="https://www.vectorkhazana.com/assets/images/products/Dumbbell_Svg.png"> 
+         </img>
+        </h1>
+        </header>
+        
+<div class="card">
     <h1>Log In</h1>
-    <form method="POST" action="/login" style="display: flex; flex-wrap: nowrap; align-items: center; margin-top: 20px;">
-      <div class="input-field" style="margin-right: 10px;">
-        <input placeholder="username" value="bob" name="username" type="text" class="validate" required>
-        <label for="username">username</label>
-      </div>
-      <div class="input-field" style="margin-right: 10px;">
-        <input placeholder="password" value="bobpass" name="password" type="password" class="validate" required>
-        <label for="password">Password</label>
-      </div>
-      <button class="btn waves-effect waves-light"><a href="/temp">login</a></button>
-      {% if is_authenticated %}
-        <!-- <a href="/logout" class="btn waves-effect waves-light" style="margin-left: 10px;">Logout</a> -->
-        <button class="btn waves-effect waves-light"><a href="/logout">Logout</a></button>
-      {% endif %}
+
+    <form method="POST" action="/login">
+        <div class="input-field">
+            <input placeholder="Username" value="bob" name="username" type="text" class="validate" required>
+            <label for="username">Username</label>
+        </div>
+
+        <div class="input-field">
+            <input placeholder="Password" value="bobpass" name="password" type="password" class="validate" required>
+            <label for="password">Password</label>
+        </div>
+        
+        <button class="btn waves-effect waves-light"><a href="/temp">login</a></button>
+
+        <div class="input-field">
+            <p>Don't have an account? <a href="/">Sign up</a></p>
+        </div>
     </form>
-  </body>
-  </html>
+</div>
+
+</body>
+</html>

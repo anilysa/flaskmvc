@@ -1,86 +1,118 @@
-/* Reset default margin and padding */
+/* Global styles */
 html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #696969;
+  margin: 0;
+  padding: 0;
+  background-color: #eeeeee;
+  font-family: Arial, sans-serif;
+  color: #333; /* Added consistent text color */
 }
 
-/* Global font styles */
-body {
-    font-family: Arial, sans-serif; /* Use a commonly available font */
+/* Title styles */
+header h1 {
+  margin-top: 0;
+  font-size: 36px;
+  background-color: #31363f;
+  text-align: center;
+  margin-bottom: 20px; /* Increased spacing below the title */
+  color: #eeeeee;
+  padding: 20px; /* Increased padding for better visual appeal */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-/* Style for navigation bar */
-nav {
-    background-color: #333; /* Purple background color */
-    display: block;
-    text-align: center;
-    padding: 10px;
-    font-family: "Century Gothic", Times, serif;
-    width: 100%;
+h1 img {
+  width: 100px;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
 }
 
-/* Style for brand logo */
-.brand-logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #FFF; /* White color for brand logo */
-    display: block;
-    text-align: center;
+/* Form container */
+.form-container {
+  max-width: 400px;
+  margin: 40px auto; /* Increased margin for better centering */
+  padding: 20px; /* Increased padding for better spacing */
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
 }
 
-/* Style for navigation links */
-nav ul {
-    display: flex;
-    list-style-type: none;
-    justify-content: center; 
-    align-items: center;
+/* Input fields */
+.input-field {
+  margin-bottom: 20px; /* Increased spacing between input fields */
 }
 
-nav ul li {
-    margin-right: 20px; /* Spacing between navigation links */
+.input-field input {
+  width: calc(100% - 24px); /* Adjusted width for smaller input field */
+  padding: 12px; /* Increased padding for better input field appearance */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s; /* Added transition for smoother effect */
 }
 
-nav ul li a {
-    color: #FFF; /* White color for navigation links */
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: color 0.3s; /* Smooth transition for color change */
-    justify-content: center;
-    text-align: center;
+.input-field input:focus {
+  outline: none;
+  border-color: #5c87d6;
 }
 
-nav ul li a:hover {
-    color: #9F73AB; /* Light purple color on hover */
+/* Labels */
+.input-field label {
+  margin-bottom: 5px; /* Adjusted spacing for better alignment */
 }
 
-/* Style for login form */
-.navbar-form {
-    display: flex;
-    align-items: center;
+/* Submit button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #76ABAE;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.navbar-form input[type="text"],
-.navbar-form input[type="password"] {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-right: 10px;
-    border-radius: 5px;
+.btn:hover {
+  background-color: #4B888D;
 }
 
-.navbar-form button {
-    background-color: #673AB7; /* Purple color for button background */
-    color: #FFF; /* White color for button text */
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+/* Card container */
+.card {
+  max-width: 400px;
+  margin: 50px auto; /* Increased margin for better centering */
+  padding: 20px; /* Decreased padding for smaller card */
+  background-color: #fff;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-form button:hover {
-    background-color: #9F73AB; /* Light purple color on hover */
+/* Card content */
+.card {
+  max-height: 70vh; /* Limited max height to fit smaller content */
+  padding: 30px; /* Decreased padding for smaller content */
+  padding-right: 25px;
 }
 
-/* Additional styles */
-/* Add your additional styles here */
+/* Text inside the card */
+.card p, .card ul {
+  font-size: 13px; /* Decreased font size for smaller text */
+  margin-bottom: 5px; /* Decreased margin bottom for tighter spacing */
+}
+
+/* Headers inside the card */
+.card h1 {
+  font-size: 20px; /* Decreased font size for smaller headers */
+  margin-bottom: 10px; /* Decreased margin bottom for tighter spacing */
+  text-align: center;
+}
+
+/* Hyperlink */
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #f0f0f0;
+}

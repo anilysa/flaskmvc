@@ -89,11 +89,11 @@ def create_app(overrides={}):
 
     @app.route('/login')
     def login():
-        return render_template('temp.html')
+        return render_template('login.html')
 
     @app.route('/logout')
     def logout():
-        return render_template('index.html')
+        return render_template('login.html')
 
     @app.route('/view')
     def view():
@@ -111,48 +111,8 @@ def create_app(overrides={}):
 
 
 
-    # # Initialize the login manager
-    # login_manager = LoginManager()
-    # login_manager.init_app(app)
-
-    # # Define the login route
-    # @app.route('/login', methods=['GET', 'POST'])
-    # def login():
-    #     if current_user.is_authenticated:
-    #     # If the user is already authenticated, redirect them to the temp page
-    #         return redirect(url_for('temp'))
-
-    # # Your existing login code here
-
-    # # If the login is successful, log the user in
-    #     user = User.query.filter_by(username=form.username.data).first()
-    #     if user and user.check_password(form.password.data):
-    #         login_user(user)
-    #         return redirect(url_for('temp'))
-
-    # # Define the temp route
-    # @app.route('/temp')
-    # @login_required
-    # def temp():
-    # # Your existing temp page code here
-    #     return render_template('temp.html')
-
-    # # Define the logout route
-    # @app.route('/logout')
-    # @login_required
-    # def logout():
-    #     logout_user()
-    #     return redirect(url_for('login'))
-
-    # # Define the login manager's login view
-    # @login_manager.user_loader
-    # def load_user(user_id):
-    # # Your existing user loading code here
-    #     pass
+   
 
 
     return app
 
-# # Run Flask app
-# if __name__ == '__main__':
-#     app.run(host='0.0.0.0', port=8080)

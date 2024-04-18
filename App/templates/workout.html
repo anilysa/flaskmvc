@@ -5,19 +5,21 @@
     <title>Add Workout</title>
   </head>
   <body>
-    <nav class="bar">
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo center">{% block page %}{% endblock %}</a>
-        <ul id="nav-mobile" class="left">
-          <li><a href="/temp">Home</a></li>
-          <li><a href="/workout">workouts</a></li>
-          <li><a href="/routine">workout routine</a></li>
-          <li><a href="/logout">Logout</a></li>
-          <li><a href="/login">login</a></li>
-          <li><a href="/view">routine view</a></li>
-        </ul>
-      </div>
-    
+    <header>
+      <h1> Workout App 
+        <img src="https://www.vectorkhazana.com/assets/images/products/Dumbbell_Svg.png"> 
+       </img>
+      </h1>
+        <nav class="navbar">
+            <div class="navbar-links">
+              <a href="/temp">Home</a>
+              <a href="/workout">Workouts</a>
+              <a href="/routine">Workout Routine</a>
+              <a href="/view">Routine View</a>
+              <a href="/">Logout</a>
+            </div>
+        </nav>
+      </header>
     <h1>Add Workout</h1>
     <div>
       <input type="text" id="searchInput" placeholder="Search for an exercise...">

@@ -3,29 +3,34 @@
 <head>
   <title>Weekly Workout Routine</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='routineview.css') }}">
+  
 </head>
 <body>
-<nav class="bar">
-  <div class="nav-wrapper">
-    <a href="#!" class="brand-logo center">{% block page %}{% endblock %}</a>
-    <ul id="nav-mobile" class="left">
-      <li><a href="/temp">Home</a></li>
-      <li><a href="/workout">workouts</a></li>
-      <li><a href="/routine">workout routine</a></li>
-      <li><a href="/view">routine view</a></li>
-      <li><a href="/logout">Logout</a></li>
-    </ul>
-  </div>
-</nav>
+  <header>
+    <h1> Workout App 
+      <img src="https://www.vectorkhazana.com/assets/images/products/Dumbbell_Svg.png"> 
+     </img>
+    </h1>
+      <nav class="navbar">
+          <div class="navbar-links">
+            <a href="/temp">Home</a>
+            <a href="/workout">Workouts</a>
+            <a href="/routine">Workout Routine</a>
+            <a href="/view">Routine View</a>
+            <a href="/">Logout</a>
+          </div>
+      </nav>
+    </header>
 
 <div class="card-container" id="routine-display"></div>
 
-<button id="edit-button">Edit</button>
+<button id="edit-button" class="card-button">Edit</button>
 
 <script>
   // Retrieve saved routine from localStorage
   var savedRoutine = JSON.parse(localStorage.getItem("routine"));
 
+  
   // Function to display the saved routine
   function displayRoutine() {
     var routineDisplay = document.getElementById("routine-display");
@@ -76,6 +81,7 @@ document.getElementById("edit-button").addEventListener("click", function() {
   exerciseItems.forEach(item => {
     var deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
+    deleteButton.classList.add("card-button"); // Add the card-button class
     deleteButton.addEventListener("click", function() {
       // Remove the exercise from the saved routine
       var day = item.closest(".card-content").querySelector("h2").textContent;
@@ -92,6 +98,7 @@ document.getElementById("edit-button").addEventListener("click", function() {
   var confirmButton = document.createElement("button");
   confirmButton.id = "confirm-button"; // Add id for easy removal
   confirmButton.textContent = "Confirm";
+  confirmButton.classList.add("card-button"); // Add the card-button class
   confirmButton.addEventListener("click", function() {
     // Update the routine in localStorage
     localStorage.setItem("routine", JSON.stringify(savedRoutine));
@@ -105,6 +112,7 @@ document.getElementById("edit-button").addEventListener("click", function() {
 
   // Call the displayRoutine function when the page loads
   displayRoutine();
+
   
 </script>
 

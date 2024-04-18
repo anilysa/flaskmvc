@@ -1,63 +1,86 @@
-/* Reset default margin and padding */
-html, body {
+/* Reset default margins, paddings, and box-sizing */
+* {
     margin: 0;
     padding: 0;
-    background-color: #696969;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    box-sizing: border-box;
 }
 
-/* Global font styles */
+/* Body styles */
 body {
-    background-color: #696969;
-    font-family: Arial, sans-serif; /* Use a commonly available font */
+    font-family: Arial, sans-serif;
+    background-color: #faf6fc;
+    color: #222831;
+    line-height: 1.6;
 }
 
-/* Style for navigation bar */
+/* Title styles */
+header h1 {
+    font-size: 36px; /* Adjust font size */
+    text-align: center; /* Center-align header contents */
+    margin-bottom: 0; /* Adjusted margin */
+    color: #0c0c0c; /* Match text color with navbar links */
+    padding-left: 70px; /* Add padding to the left */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Add a text shadow for depth */
+    background-color: #31363f;
+}
+
+
+h1 img {
+    width: 100px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle; /* Align the image vertically in line with text */
+    margin-left: 20px; /* Add margin to the left */
+    padding-bottom: 10px;
+}
+
+/* Navigation bar styles */
 nav {
-    background-color: #333; /* Purple background color */
-    display: block;
-    text-align: center;
-    padding: 10px;
-    font-family: "Century Gothic", Times, serif;
-    width: 100%;
-}
-
-/* Style for brand logo */
-.brand-logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #FFF; /* White color for brand logo */
-    display: block;
-    text-align: center;
-}
-
-/* Style for navigation links */
-nav ul {
+    background-color: #31363f;
+    padding: 10px 20px;
+    margin-bottom: 20px;
     display: flex;
-    list-style-type: none;
-    justify-content: center; 
-    align-items: center;
-}
-
-nav ul li {
-    margin-right: 20px; /* Spacing between navigation links */
-}
-
-nav ul li a {
-    color: #FFF; /* White color for navigation links */
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: color 0.3s; /* Smooth transition for color change */
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+   
 }
 
-nav ul li a:hover {
-    color: #9F73AB; /* Light purple color on hover */
+/* Brand logo styles */
+.brand-logo {
+    font-size: 36px;
+    color: #eeeeee;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-left: 20px;
 }
 
-/* Style for cards container */
+/* Navigation links styles */
+.navbar-links a {
+    color: #eeeeee;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.navbar-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-links a:hover::before {
+    background-color: #76ABAE;
+}
+
+/* Featured workouts styles */
 .bar {
     display: flex;
     flex-wrap: wrap;
@@ -65,73 +88,333 @@ nav ul li a:hover {
     padding: 20px;
 }
 
-/* Style for individual card */
 .workout-card {
-    background-color: #FFF;
+    background-color: #fff;
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 220px; /* Adjusted width for better spacing */
     text-align: center;
     transition: transform 0.3s ease-in-out;
 }
 
 .workout-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Style for card title */
 .workout-card h2 {
-    font-size: 18px;
+    font-size: 24px;
     margin-bottom: 10px;
-    color: #333;
+    color: #222831;
 }
 
-/* Style for dropdowns */
-select {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
+/* Button styles */
+.card-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #76ABAE;
+    color: #fff;
+    border: none;
     border-radius: 5px;
-    background-color: #fff;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Style for dropdown arrow icon */
-select::after {
-    content: '\25BC';
+.card-button:hover {
+    background-color: #4B888D;
+    transform: translateY(-2px);
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    
+}
+
+.dropdown-content {
+    display: none;
     position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    pointer-events: none;
+    background-color: #76ABAE;
+    min-width: 1000px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    z-index: 1;
 }
 
-/* Style for dropdown options */
-option {
-    padding: 10px;
+.dropdown-content p {
+    margin-bottom: 10px;
 }
+
+.dropbtn {
+    background-color: #76ABAE;
+    color: #eeeeee;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Save button styles */
 .save-button-container {
     text-align: center;
-    margin-top: 20px; /* Adjust this value as needed */
-  }
-  
-  .save-button {
+    margin-top: 20px;
+}
+
+.save-button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #333;
-    color: #FFF;
+    background-color: #76ABAE; /* Match with dropdown button */
+    color: #eeeeee; /* Light text */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.save-button:hover {
+    background-color: #456a6d; /* Darker shade on hover */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .bar {
+        padding: 10px;
+    }
+}
+
+/* Button Edits */
+.bar .workout-card button {
+    padding: 8px 16px; /* Adjusted padding */
+    background-color: #76ABAE;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Adjusted font size */
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 6px; /* Adjusted border radius */
   }
   
-  .save-button:hover {
-    background-color: #555;
+  .bar .workout-card button:hover {
+    background-color: #658f93; /* Darker Green */
+  }
+  
+  .bar .workout-card button:focus {
+    outline: none;
+  }
+  
+  .bar .workout-card button:active {
+    background-color: #4b6b6f; /* Active Green */
+  }
+
+/* Individual Dropdown Styling */
+/* Monday */
+#monday-muscle-groups {
+    padding: 8px 16px; /* Adjusted padding */
+    background-color: #76ABAE;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Adjusted font size */
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 6px; /* Adjusted border radius */
+  }
+  
+  #monday-muscle-groups :hover {
+    background-color: #658f93; /* Darker Green */
+  }
+  
+  #monday-muscle-groups:focus {
+    outline: none;
+  }
+  
+  #monday-muscle-groups:active {
+    background-color: #4b6b6f; /* Active Green */
+  }
+  
+  /* Tuesday */
+  #tuesday-muscle-groups {
+    padding: 8px 16px; /* Adjusted padding */
+    background-color: #76ABAE;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Adjusted font size */
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 6px; /* Adjusted border radius */
+  }
+  
+  #tuesday-muscle-groups :hover {
+    background-color: #658f93; /* Darker Green */
+  }
+  
+  #tuesday-muscle-groups:focus {
+    outline: none;
+  }
+  
+  #tuesday-muscle-groups:active {
+    background-color: #4b6b6f; /* Active Green */
+  }
+
+  /* Wednesday*/
+  #wednesday-muscle-groups {
+    padding: 8px 16px; /* Adjusted padding */
+    background-color: #76ABAE;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Adjusted font size */
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 6px; /* Adjusted border radius */
+  }
+  
+  #wednesday-muscle-groups :hover {
+    background-color: #658f93; /* Darker Green */
+  }
+  
+  #wednesday-muscle-groups:focus {
+    outline: none;
+  }
+  
+  #wednesday-muscle-groups:active {
+    background-color: #4b6b6f; /* Active Green */
+  }
+
+  /* Thursday*/
+  #thursday-muscle-groups {
+    padding: 8px 16px; /* Adjusted padding */
+    background-color: #76ABAE;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Adjusted font size */
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 6px; /* Adjusted border radius */
+  }
+  
+  #thursday-muscle-groups :hover {
+    background-color: #658f93; /* Darker Green */
+  }
+  
+  #thursday-muscle-groups:focus {
+    outline: none;
+  }
+  
+  #thursday-muscle-groups:active {
+    background-color: #4b6b6f; /* Active Green */
+  }
+
+   /*Friday*/
+   #friday-muscle-groups {
+    padding: 8px 16px; /* Adjusted padding */
+    background-color: #76ABAE;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Adjusted font size */
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 6px; /* Adjusted border radius */
+  }
+  
+  #friday-muscle-groups :hover {
+    background-color: #658f93; /* Darker Green */
+  }
+  
+  #friday-muscle-groups:focus {
+    outline: none;
+  }
+  
+  #friday-muscle-groups:active {
+    background-color: #4b6b6f; /* Active Green */
+  }
+
+  /*Saturday*/
+  #saturday-muscle-groups {
+    padding: 8px 16px; /* Adjusted padding */
+    background-color: #76ABAE;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Adjusted font size */
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 6px; /* Adjusted border radius */
+  }
+  
+  #saturday-muscle-groups :hover {
+    background-color: #658f93; /* Darker Green */
+  }
+  
+  #saturday-muscle-groups:focus {
+    outline: none;
+  }
+  
+  #saturday-muscle-groups:active {
+    background-color: #4b6b6f; /* Active Green */
+  }
+
+  /*Sunday*/
+  #sunday-muscle-groups {
+    padding: 8px 16px; /* Adjusted padding */
+    background-color: #76ABAE;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Adjusted font size */
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 6px; /* Adjusted border radius */
+  }
+  
+  #sunday-muscle-groups :hover {
+    background-color: #658f93; /* Darker Green */
+  }
+  
+  #sunday-muscle-groups:focus {
+    outline: none;
+  }
+  
+  #sunday-muscle-groups:active {
+    background-color: #4b6b6f; /* Active Green */
   }
