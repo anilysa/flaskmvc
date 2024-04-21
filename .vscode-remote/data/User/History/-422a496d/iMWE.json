@@ -1,0 +1,6 @@
+{
+    "gitpod.openInStable.neverPrompt": true,
+    "redhat.telemetry.enabled": true,
+    "window.autoDetectColorScheme": true,
+    "workbench.colorTheme": "Gitpod Dark"
+}

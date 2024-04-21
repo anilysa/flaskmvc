@@ -1,0 +1,69 @@
+2024-04-20 01:47:05.522 [info] Log level: Info
+2024-04-20 01:47:05.522 [info] Validating found git in: "git"
+2024-04-20 01:47:05.522 [info] Using git "2.43.2" from "git"
+2024-04-20 01:47:05.522 [info] > git rev-parse --show-toplevel [1ms]
+2024-04-20 01:47:05.522 [info] > git rev-parse --git-dir --git-common-dir [2ms]
+2024-04-20 01:47:05.522 [info] Open repository: /workspace/flaskmvc
+2024-04-20 01:47:05.522 [info] > git config --get commit.template [5ms]
+2024-04-20 01:47:05.522 [info] > git rev-parse --show-toplevel [1ms]
+2024-04-20 01:47:05.522 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [6ms]
+2024-04-20 01:47:05.522 [info] > git rev-parse --show-toplevel [1ms]
+2024-04-20 01:47:05.522 [warning] ENOENT: no such file or directory, open '/workspace/flaskmvc/.git/refs/remotes/origin/main'
+2024-04-20 01:47:05.522 [info] > git rev-parse refs/remotes/origin/main [5ms]
+2024-04-20 01:47:05.522 [info] > git rev-parse --show-toplevel [6ms]
+2024-04-20 01:47:05.522 [info] > git status -z -uall [6ms]
+2024-04-20 01:47:05.522 [info] > git merge-base refs/heads/main refs/remotes/origin/main [10ms]
+2024-04-20 01:47:05.522 [info] > git rev-parse --show-toplevel [24ms]
+2024-04-20 01:47:05.522 [info] > git config --get commit.template [11ms]
+2024-04-20 01:47:05.522 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [6ms]
+2024-04-20 01:47:05.522 [info] > git rev-parse --show-toplevel [13ms]
+2024-04-20 01:47:05.522 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-04-20 01:47:05.522 [info] > git diff --name-status -z --diff-filter=ADMR 67c8bcb543bbafc4462bb8fedf7dc22085389c55...refs/remotes/origin/main [7ms]
+2024-04-20 01:47:05.522 [warning] ENOENT: no such file or directory, open '/workspace/flaskmvc/.git/refs/remotes/origin/main'
+2024-04-20 01:47:05.522 [info] > git rev-parse refs/remotes/origin/main [12ms]
+2024-04-20 01:47:05.522 [info] > git rev-parse --show-toplevel [22ms]
+2024-04-20 01:47:05.522 [info] > git status -z -uall [6ms]
+2024-04-20 01:47:05.522 [info] > git rev-parse --show-toplevel [4ms]
+2024-04-20 01:47:05.522 [info] > git rev-parse --show-toplevel [1ms]
+2024-04-20 01:47:06.135 [info] > git check-ignore -v -z --stdin [1ms]
+2024-04-20 01:47:08.193 [info] > git config --local branch.main.github-pr-owner-number [2ms]
+2024-04-20 01:47:08.193 [warning] git config failed: Failed to execute git
+2024-04-20 01:52:07.990 [info] > git config --local branch.main.github-pr-owner-number [0ms]
+2024-04-20 01:52:07.990 [warning] git config failed: Failed to execute git
+2024-04-20 01:57:08.000 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-20 01:57:08.000 [warning] git config failed: Failed to execute git
+2024-04-20 02:02:08.011 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-20 02:02:08.011 [warning] git config failed: Failed to execute git
+2024-04-20 02:07:08.021 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-20 02:07:08.021 [warning] git config failed: Failed to execute git
+2024-04-20 02:12:08.031 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-20 02:12:08.032 [warning] git config failed: Failed to execute git
+2024-04-20 02:17:08.043 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-20 02:17:08.043 [warning] git config failed: Failed to execute git
+2024-04-20 02:20:48.573 [info] > git show --textconv :App/templates/temp.html [11ms]
+2024-04-20 02:20:48.574 [info] > git ls-files --stage -- /workspace/flaskmvc/App/templates/temp.html [1ms]
+2024-04-20 02:20:58.362 [info] > git show --textconv :App/models.py [7ms]
+2024-04-20 02:20:58.363 [info] > git ls-files --stage -- /workspace/flaskmvc/App/models.py [1ms]
+2024-04-20 02:22:08.057 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-20 02:22:08.057 [warning] git config failed: Failed to execute git
+2024-04-20 02:27:08.070 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-20 02:27:08.070 [warning] git config failed: Failed to execute git
+2024-04-20 02:30:54.334 [info] > git config --get commit.template [12ms]
+2024-04-20 02:30:54.336 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-04-20 02:30:54.346 [warning] ENOENT: no such file or directory, open '/workspace/flaskmvc/.git/refs/remotes/origin/main'
+2024-04-20 02:30:54.348 [info] > git rev-parse refs/remotes/origin/main [2ms]
+2024-04-20 02:30:54.361 [info] > git status -z -uall [2ms]
+2024-04-20 02:30:57.715 [info] > git show --textconv :App/templates/temp.html [8ms]
+2024-04-20 02:30:57.716 [info] > git ls-files --stage -- /workspace/flaskmvc/App/templates/temp.html [1ms]
+2024-04-20 02:30:59.378 [info] > git config --get commit.template [1ms]
+2024-04-20 02:30:59.391 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2024-04-20 02:30:59.402 [warning] ENOENT: no such file or directory, open '/workspace/flaskmvc/.git/refs/remotes/origin/main'
+2024-04-20 02:30:59.403 [info] > git rev-parse refs/remotes/origin/main [1ms]
+2024-04-20 02:30:59.416 [info] > git status -z -uall [2ms]
+2024-04-20 02:31:39.145 [info] > git check-ignore -v -z --stdin [1ms]
+2024-04-20 02:31:40.157 [info] > git check-ignore -v -z --stdin [2ms]
+2024-04-20 02:32:08.081 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-20 02:32:08.081 [warning] git config failed: Failed to execute git
+2024-04-20 02:33:11.498 [info] > git check-ignore -v -z --stdin [1ms]
+2024-04-20 02:33:12.080 [info] > git check-ignore -v -z --stdin [1ms]
+2024-04-20 02:33:12.651 [info] > git check-ignore -v -z --stdin [1ms]

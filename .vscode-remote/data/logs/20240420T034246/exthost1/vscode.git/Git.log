@@ -1,0 +1,49 @@
+2024-04-20 03:42:53.567 [info] Log level: Info
+2024-04-20 03:42:53.567 [info] Validating found git in: "git"
+2024-04-20 03:42:53.567 [info] Using git "2.43.2" from "git"
+2024-04-20 03:42:53.567 [info] > git rev-parse --show-toplevel [3ms]
+2024-04-20 03:42:53.567 [info] > git rev-parse --git-dir --git-common-dir [2ms]
+2024-04-20 03:42:53.567 [info] Open repository: /workspace/flaskmvc
+2024-04-20 03:42:53.567 [info] > git config --get commit.template [13ms]
+2024-04-20 03:42:53.567 [info] > git rev-parse --show-toplevel [6ms]
+2024-04-20 03:42:53.567 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [10ms]
+2024-04-20 03:42:53.567 [info] > git rev-parse --show-toplevel [2ms]
+2024-04-20 03:42:53.567 [warning] ENOENT: no such file or directory, open '/workspace/flaskmvc/.git/refs/remotes/origin/main'
+2024-04-20 03:42:53.567 [info] > git rev-parse refs/remotes/origin/main [12ms]
+2024-04-20 03:42:53.567 [info] > git rev-parse --show-toplevel [16ms]
+2024-04-20 03:42:53.567 [info] > git status -z -uall [14ms]
+2024-04-20 03:42:53.567 [info] > git merge-base refs/heads/main refs/remotes/origin/main [31ms]
+2024-04-20 03:42:53.567 [info] > git rev-parse --show-toplevel [53ms]
+2024-04-20 03:42:53.567 [info] > git config --get commit.template [39ms]
+2024-04-20 03:42:53.567 [info] > git rev-parse --show-toplevel [12ms]
+2024-04-20 03:42:53.567 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [23ms]
+2024-04-20 03:42:53.567 [info] > git rev-parse --show-toplevel [4ms]
+2024-04-20 03:42:53.567 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [14ms]
+2024-04-20 03:42:53.567 [info] > git diff --name-status -z --diff-filter=ADMR 67c8bcb543bbafc4462bb8fedf7dc22085389c55...refs/remotes/origin/main [26ms]
+2024-04-20 03:42:53.567 [warning] ENOENT: no such file or directory, open '/workspace/flaskmvc/.git/refs/remotes/origin/main'
+2024-04-20 03:42:53.567 [info] > git rev-parse refs/remotes/origin/main [3ms]
+2024-04-20 03:42:53.567 [info] > git rev-parse --show-toplevel [22ms]
+2024-04-20 03:42:53.567 [info] > git status -z -uall [118ms]
+2024-04-20 03:42:53.567 [info] > git rev-parse --show-toplevel [8ms]
+2024-04-20 03:42:53.874 [info] > git show --textconv :App/templates/temp.html [11ms]
+2024-04-20 03:42:53.875 [info] > git ls-files --stage -- /workspace/flaskmvc/App/templates/temp.html [2ms]
+2024-04-20 03:42:54.075 [info] > git check-ignore -v -z --stdin [1ms]
+2024-04-20 03:42:55.692 [info] > git config --local branch.main.github-pr-owner-number [5ms]
+2024-04-20 03:42:55.693 [warning] git config failed: Failed to execute git
+2024-04-20 03:43:31.553 [info] > git config --get commit.template [10ms]
+2024-04-20 03:43:31.554 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2024-04-20 03:43:31.562 [warning] ENOENT: no such file or directory, open '/workspace/flaskmvc/.git/refs/remotes/origin/main'
+2024-04-20 03:43:31.563 [info] > git rev-parse refs/remotes/origin/main [1ms]
+2024-04-20 03:43:31.574 [info] > git status -z -uall [2ms]
+2024-04-20 03:47:55.557 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-20 03:47:55.557 [warning] git config failed: Failed to execute git
+2024-04-20 03:52:55.570 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-20 03:52:55.570 [warning] git config failed: Failed to execute git
+2024-04-20 03:57:55.581 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-20 03:57:55.581 [warning] git config failed: Failed to execute git
+2024-04-20 04:02:55.592 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-20 04:02:55.593 [warning] git config failed: Failed to execute git
+2024-04-20 04:07:55.607 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-20 04:07:55.607 [warning] git config failed: Failed to execute git
+2024-04-20 04:12:55.617 [info] > git config --local branch.main.github-pr-owner-number [1ms]
+2024-04-20 04:12:55.617 [warning] git config failed: Failed to execute git

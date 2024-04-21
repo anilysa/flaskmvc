@@ -1,0 +1,180 @@
+2024-04-20 06:00:23.833 [info] 
+
+
+
+
+2024-04-20 06:00:23.851 [info] Extension host agent started.
+2024-04-20 06:00:23.883 [info] Extension 'gitpod.gitpod-theme' v0.0.2 is already installed. Use '--force' option to update to latest version or provide '@<version>' to install a specific version, for example: 'gitpod.gitpod-theme@1.2.3'.
+2024-04-20 06:00:23.883 [info] Extension 'github.vscode-pull-request-github' v0.86.1 is already installed. Use '--force' option to update to latest version or provide '@<version>' to install a specific version, for example: 'github.vscode-pull-request-github@1.2.3'.
+2024-04-20 06:00:30.389 [info] [192.168.177.11][4d5e7aff][ManagementConnection] New connection established.
+2024-04-20 06:00:30.740 [warning] Skipping extension /workspace/.vscode-remote/extensions/gitpod.gitpod-theme-0.0.2-universal in favour of the builtin extension /ide/extensions/gitpod.gitpod-theme.
+2024-04-20 06:00:30.911 [info] [192.168.50.137][4d20f2c7][ExtensionHostConnection] New connection established.
+2024-04-20 06:00:31.114 [info] [192.168.50.137][4d20f2c7][ExtensionHostConnection] <555> Launched Extension Host Process.
+2024-04-20 06:04:30.449 [info] [192.168.177.11][e881001b][ManagementConnection] New connection established.
+2024-04-20 06:04:31.831 [warning] Skipping extension /workspace/.vscode-remote/extensions/gitpod.gitpod-theme-0.0.2-universal in favour of the builtin extension /ide/extensions/gitpod.gitpod-theme.
+2024-04-20 06:04:31.987 [warning] RequestStore#acceptReply was called without receiving a matching request 79
+2024-04-20 06:04:31.987 [warning] RequestStore#acceptReply was called without receiving a matching request 80
+2024-04-20 06:04:31.987 [warning] RequestStore#acceptReply was called without receiving a matching request 81
+2024-04-20 06:04:31.988 [warning] RequestStore#acceptReply was called without receiving a matching request 82
+2024-04-20 06:04:31.988 [warning] RequestStore#acceptReply was called without receiving a matching request 83
+2024-04-20 06:04:31.988 [warning] RequestStore#acceptReply was called without receiving a matching request 84
+2024-04-20 06:04:31.988 [warning] RequestStore#acceptReply was called without receiving a matching request 85
+2024-04-20 06:04:31.988 [warning] RequestStore#acceptReply was called without receiving a matching request 86
+2024-04-20 06:04:31.988 [warning] RequestStore#acceptReply was called without receiving a matching request 87
+2024-04-20 06:04:31.988 [warning] RequestStore#acceptReply was called without receiving a matching request 88
+2024-04-20 06:04:31.989 [warning] RequestStore#acceptReply was called without receiving a matching request 89
+2024-04-20 06:04:31.989 [warning] RequestStore#acceptReply was called without receiving a matching request 90
+2024-04-20 06:04:31.989 [warning] RequestStore#acceptReply was called without receiving a matching request 91
+2024-04-20 06:04:32.684 [info] [192.168.129.10][4a2c1367][ExtensionHostConnection] New connection established.
+2024-04-20 06:04:32.691 [info] [192.168.129.10][4a2c1367][ExtensionHostConnection] <1120> Launched Extension Host Process.
+2024-04-20 06:04:34.804 [warning] RequestStore#acceptReply was called without receiving a matching request 92
+2024-04-20 06:04:34.804 [warning] RequestStore#acceptReply was called without receiving a matching request 93
+2024-04-20 06:04:34.804 [warning] RequestStore#acceptReply was called without receiving a matching request 94
+2024-04-20 06:04:34.805 [warning] RequestStore#acceptReply was called without receiving a matching request 95
+2024-04-20 06:04:34.805 [warning] RequestStore#acceptReply was called without receiving a matching request 96
+2024-04-20 06:04:34.805 [warning] RequestStore#acceptReply was called without receiving a matching request 97
+2024-04-20 06:04:34.805 [warning] RequestStore#acceptReply was called without receiving a matching request 98
+2024-04-20 06:04:34.805 [warning] RequestStore#acceptReply was called without receiving a matching request 99
+2024-04-20 06:04:34.805 [warning] RequestStore#acceptReply was called without receiving a matching request 100
+2024-04-20 06:04:34.805 [warning] RequestStore#acceptReply was called without receiving a matching request 101
+2024-04-20 06:04:34.805 [warning] RequestStore#acceptReply was called without receiving a matching request 102
+2024-04-20 06:04:34.805 [warning] RequestStore#acceptReply was called without receiving a matching request 103
+2024-04-20 06:04:34.805 [warning] RequestStore#acceptReply was called without receiving a matching request 104
+2024-04-20 06:05:58.643 [info] [192.168.177.11][53f01191][ManagementConnection] New connection established.
+2024-04-20 06:05:58.935 [warning] Skipping extension /workspace/.vscode-remote/extensions/gitpod.gitpod-theme-0.0.2-universal in favour of the builtin extension /ide/extensions/gitpod.gitpod-theme.
+2024-04-20 06:05:59.162 [info] [192.168.50.137][9e776da5][ExtensionHostConnection] New connection established.
+2024-04-20 06:05:59.173 [info] [192.168.50.137][9e776da5][ExtensionHostConnection] <1255> Launched Extension Host Process.
+2024-04-20 06:10:21.202 [info] Getting Manifest... alexcvzz.vscode-sqlite
+2024-04-20 06:10:21.818 [info] Installing extension: alexcvzz.vscode-sqlite
+2024-04-20 06:10:25.404 [error] Could not load vsce-sign module Cannot find module '@vscode/vsce-sign'
+Require stack:
+- /ide/out/server-main.js
+2024-04-20 06:10:25.405 [info] Extension signature verification is not done: alexcvzz.vscode-sqlite
+2024-04-20 06:10:25.515 [info] Extracted extension to file:///workspace/.vscode-remote/extensions/alexcvzz.vscode-sqlite-0.14.1-universal: alexcvzz.vscode-sqlite
+2024-04-20 06:10:25.518 [info] Renamed to /workspace/.vscode-remote/extensions/alexcvzz.vscode-sqlite-0.14.1-universal
+2024-04-20 06:10:25.519 [info] Extracting extension completed. alexcvzz.vscode-sqlite
+2024-04-20 06:10:25.526 [info] Extension installed successfully: alexcvzz.vscode-sqlite
+2024-04-20 06:10:26.904 [warning] RequestStore#acceptReply was called without receiving a matching request 105
+2024-04-20 06:10:26.904 [warning] RequestStore#acceptReply was called without receiving a matching request 106
+2024-04-20 06:10:26.904 [warning] RequestStore#acceptReply was called without receiving a matching request 107
+2024-04-20 06:10:26.904 [warning] RequestStore#acceptReply was called without receiving a matching request 108
+2024-04-20 06:10:26.904 [warning] RequestStore#acceptReply was called without receiving a matching request 109
+2024-04-20 06:10:26.904 [warning] RequestStore#acceptReply was called without receiving a matching request 110
+2024-04-20 06:10:26.904 [warning] RequestStore#acceptReply was called without receiving a matching request 111
+2024-04-20 06:10:26.904 [warning] RequestStore#acceptReply was called without receiving a matching request 112
+2024-04-20 06:10:26.904 [warning] RequestStore#acceptReply was called without receiving a matching request 113
+2024-04-20 06:10:26.904 [warning] RequestStore#acceptReply was called without receiving a matching request 114
+2024-04-20 06:10:26.904 [warning] RequestStore#acceptReply was called without receiving a matching request 115
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 116
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 117
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 118
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 119
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 120
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 121
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 122
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 123
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 124
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 125
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 126
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 127
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 128
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 129
+2024-04-20 06:10:26.905 [warning] RequestStore#acceptReply was called without receiving a matching request 130
+2024-04-20 06:10:56.870 [warning] RequestStore#acceptReply was called without receiving a matching request 131
+2024-04-20 06:10:56.870 [warning] RequestStore#acceptReply was called without receiving a matching request 132
+2024-04-20 06:10:56.870 [warning] RequestStore#acceptReply was called without receiving a matching request 133
+2024-04-20 06:10:56.871 [warning] RequestStore#acceptReply was called without receiving a matching request 134
+2024-04-20 06:10:56.871 [warning] RequestStore#acceptReply was called without receiving a matching request 135
+2024-04-20 06:10:56.871 [warning] RequestStore#acceptReply was called without receiving a matching request 136
+2024-04-20 06:10:56.871 [warning] RequestStore#acceptReply was called without receiving a matching request 137
+2024-04-20 06:10:56.871 [warning] RequestStore#acceptReply was called without receiving a matching request 138
+2024-04-20 06:10:56.871 [warning] RequestStore#acceptReply was called without receiving a matching request 139
+2024-04-20 06:10:56.871 [warning] RequestStore#acceptReply was called without receiving a matching request 140
+2024-04-20 06:10:56.871 [warning] RequestStore#acceptReply was called without receiving a matching request 141
+2024-04-20 06:10:56.871 [warning] RequestStore#acceptReply was called without receiving a matching request 142
+2024-04-20 06:10:56.871 [warning] RequestStore#acceptReply was called without receiving a matching request 143
+2024-04-20 06:12:30.298 [warning] RequestStore#acceptReply was called without receiving a matching request 144
+2024-04-20 06:12:30.298 [warning] RequestStore#acceptReply was called without receiving a matching request 145
+2024-04-20 06:12:30.298 [warning] RequestStore#acceptReply was called without receiving a matching request 146
+2024-04-20 06:12:30.298 [warning] RequestStore#acceptReply was called without receiving a matching request 147
+2024-04-20 06:12:30.298 [warning] RequestStore#acceptReply was called without receiving a matching request 148
+2024-04-20 06:12:30.298 [warning] RequestStore#acceptReply was called without receiving a matching request 149
+2024-04-20 06:12:30.298 [warning] RequestStore#acceptReply was called without receiving a matching request 150
+2024-04-20 06:12:30.298 [warning] RequestStore#acceptReply was called without receiving a matching request 151
+2024-04-20 06:12:30.298 [warning] RequestStore#acceptReply was called without receiving a matching request 152
+2024-04-20 06:12:30.298 [warning] RequestStore#acceptReply was called without receiving a matching request 153
+2024-04-20 06:12:30.298 [warning] RequestStore#acceptReply was called without receiving a matching request 154
+2024-04-20 06:12:30.298 [warning] RequestStore#acceptReply was called without receiving a matching request 155
+2024-04-20 06:12:30.298 [warning] RequestStore#acceptReply was called without receiving a matching request 156
+2024-04-20 06:32:38.906 [warning] RequestStore#acceptReply was called without receiving a matching request 157
+2024-04-20 06:32:38.906 [warning] RequestStore#acceptReply was called without receiving a matching request 158
+2024-04-20 06:32:38.906 [warning] RequestStore#acceptReply was called without receiving a matching request 159
+2024-04-20 06:32:38.906 [warning] RequestStore#acceptReply was called without receiving a matching request 160
+2024-04-20 06:32:38.906 [warning] RequestStore#acceptReply was called without receiving a matching request 161
+2024-04-20 06:32:38.906 [warning] RequestStore#acceptReply was called without receiving a matching request 162
+2024-04-20 06:32:38.906 [warning] RequestStore#acceptReply was called without receiving a matching request 163
+2024-04-20 06:32:38.906 [warning] RequestStore#acceptReply was called without receiving a matching request 164
+2024-04-20 06:32:38.906 [warning] RequestStore#acceptReply was called without receiving a matching request 165
+2024-04-20 06:32:38.906 [warning] RequestStore#acceptReply was called without receiving a matching request 166
+2024-04-20 06:32:38.907 [warning] RequestStore#acceptReply was called without receiving a matching request 167
+2024-04-20 06:32:38.907 [warning] RequestStore#acceptReply was called without receiving a matching request 168
+2024-04-20 06:32:38.907 [warning] RequestStore#acceptReply was called without receiving a matching request 169
+2024-04-20 06:38:38.909 [warning] RequestStore#acceptReply was called without receiving a matching request 170
+2024-04-20 06:38:38.909 [warning] RequestStore#acceptReply was called without receiving a matching request 171
+2024-04-20 06:38:38.910 [warning] RequestStore#acceptReply was called without receiving a matching request 172
+2024-04-20 06:38:38.910 [warning] RequestStore#acceptReply was called without receiving a matching request 173
+2024-04-20 06:38:38.910 [warning] RequestStore#acceptReply was called without receiving a matching request 174
+2024-04-20 06:38:38.910 [warning] RequestStore#acceptReply was called without receiving a matching request 175
+2024-04-20 06:38:38.910 [warning] RequestStore#acceptReply was called without receiving a matching request 176
+2024-04-20 06:38:38.910 [warning] RequestStore#acceptReply was called without receiving a matching request 177
+2024-04-20 06:38:38.910 [warning] RequestStore#acceptReply was called without receiving a matching request 178
+2024-04-20 06:38:38.910 [warning] RequestStore#acceptReply was called without receiving a matching request 179
+2024-04-20 06:38:38.910 [warning] RequestStore#acceptReply was called without receiving a matching request 180
+2024-04-20 06:38:38.910 [warning] RequestStore#acceptReply was called without receiving a matching request 181
+2024-04-20 06:38:38.910 [warning] RequestStore#acceptReply was called without receiving a matching request 182
+2024-04-20 07:31:17.186 [info] [192.168.50.137][6ee3e132][ManagementConnection] New connection established.
+2024-04-20 07:31:17.549 [info] [192.168.50.137][15ec0086][ExtensionHostConnection] New connection established.
+2024-04-20 07:31:17.574 [info] [192.168.50.137][15ec0086][ExtensionHostConnection] <8009> Launched Extension Host Process.
+2024-04-20 07:31:17.610 [warning] Skipping extension /workspace/.vscode-remote/extensions/gitpod.gitpod-theme-0.0.2-universal in favour of the builtin extension /ide/extensions/gitpod.gitpod-theme.
+2024-04-20 07:31:19.274 [warning] RequestStore#acceptReply was called without receiving a matching request 183
+2024-04-20 07:31:19.274 [warning] RequestStore#acceptReply was called without receiving a matching request 184
+2024-04-20 07:31:19.274 [warning] RequestStore#acceptReply was called without receiving a matching request 185
+2024-04-20 07:31:19.274 [warning] RequestStore#acceptReply was called without receiving a matching request 186
+2024-04-20 07:31:19.274 [warning] RequestStore#acceptReply was called without receiving a matching request 187
+2024-04-20 07:31:19.274 [warning] RequestStore#acceptReply was called without receiving a matching request 188
+2024-04-20 07:31:19.274 [warning] RequestStore#acceptReply was called without receiving a matching request 189
+2024-04-20 07:31:19.275 [warning] RequestStore#acceptReply was called without receiving a matching request 190
+2024-04-20 07:31:19.275 [warning] RequestStore#acceptReply was called without receiving a matching request 191
+2024-04-20 07:31:19.275 [warning] RequestStore#acceptReply was called without receiving a matching request 192
+2024-04-20 07:31:19.275 [warning] RequestStore#acceptReply was called without receiving a matching request 193
+2024-04-20 07:31:19.275 [warning] RequestStore#acceptReply was called without receiving a matching request 194
+2024-04-20 07:31:19.275 [warning] RequestStore#acceptReply was called without receiving a matching request 195
+2024-04-20 07:31:20.072 [warning] RequestStore#acceptReply was called without receiving a matching request 196
+2024-04-20 07:31:20.072 [warning] RequestStore#acceptReply was called without receiving a matching request 197
+2024-04-20 07:31:20.072 [warning] RequestStore#acceptReply was called without receiving a matching request 198
+2024-04-20 07:31:20.072 [warning] RequestStore#acceptReply was called without receiving a matching request 199
+2024-04-20 07:31:20.072 [warning] RequestStore#acceptReply was called without receiving a matching request 200
+2024-04-20 07:31:20.072 [warning] RequestStore#acceptReply was called without receiving a matching request 201
+2024-04-20 07:31:20.072 [warning] RequestStore#acceptReply was called without receiving a matching request 202
+2024-04-20 07:31:20.072 [warning] RequestStore#acceptReply was called without receiving a matching request 203
+2024-04-20 07:31:20.072 [warning] RequestStore#acceptReply was called without receiving a matching request 204
+2024-04-20 07:31:20.072 [warning] RequestStore#acceptReply was called without receiving a matching request 205
+2024-04-20 07:31:20.072 [warning] RequestStore#acceptReply was called without receiving a matching request 206
+2024-04-20 07:31:20.072 [warning] RequestStore#acceptReply was called without receiving a matching request 207
+2024-04-20 07:31:20.072 [warning] RequestStore#acceptReply was called without receiving a matching request 208
+2024-04-20 07:36:17.395 [info] [192.168.129.10][4a2c1367][ExtensionHostConnection] <1120> Extension Host Process exited with code: 0, signal: null.
+2024-04-20 07:36:17.415 [info] [192.168.50.137][9e776da5][ExtensionHostConnection] <1255> Extension Host Process exited with code: 0, signal: null.
+2024-04-20 07:43:10.193 [info] [192.168.50.137][6ee3e132][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2024-04-20 07:43:10.242 [info] [192.168.50.137][15ec0086][ExtensionHostConnection] <8009> Extension Host Process exited with code: 0, signal: null.
+2024-04-20 08:05:30.246 [info] [192.168.177.11][4d5e7aff][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2024-04-20 08:05:30.294 [info] [192.168.50.137][4d20f2c7][ExtensionHostConnection] <555> Extension Host Process exited with code: 0, signal: null.
+2024-04-20 08:05:33.627 [info] [192.168.177.11][396ca81a][ManagementConnection] New connection established.
+2024-04-20 08:05:33.913 [warning] Skipping extension /workspace/.vscode-remote/extensions/gitpod.gitpod-theme-0.0.2-universal in favour of the builtin extension /ide/extensions/gitpod.gitpod-theme.
+2024-04-20 08:05:34.208 [info] [192.168.177.11][6c362c2a][ExtensionHostConnection] New connection established.
+2024-04-20 08:05:34.218 [info] [192.168.177.11][6c362c2a][ExtensionHostConnection] <10171> Launched Extension Host Process.
+2024-04-20 08:06:33.328 [info] [192.168.177.11][396ca81a][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2024-04-20 08:06:33.370 [info] [192.168.177.11][6c362c2a][ExtensionHostConnection] <10171> Extension Host Process exited with code: 0, signal: null.
+2024-04-20 08:06:36.736 [info] [192.168.129.10][d354371b][ManagementConnection] New connection established.
+2024-04-20 08:06:37.026 [warning] Skipping extension /workspace/.vscode-remote/extensions/gitpod.gitpod-theme-0.0.2-universal in favour of the builtin extension /ide/extensions/gitpod.gitpod-theme.
+2024-04-20 08:06:37.117 [info] [192.168.50.137][ed1fabef][ExtensionHostConnection] New connection established.
+2024-04-20 08:06:37.134 [info] [192.168.50.137][ed1fabef][ExtensionHostConnection] <10425> Launched Extension Host Process.

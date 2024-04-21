@@ -1,0 +1,43 @@
+<!-- this is the signup page -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signup.css') }}">
+</head>
+<body>
+
+  <header>
+    <h1> Workout App 
+      <img src="https://www.vectorkhazana.com/assets/images/products/Dumbbell_Svg.png"> 
+     </img>
+    </h1>
+    </header>
+
+<div class="card">
+  <div class="card-content">
+    <h1>Sign Up</h1>
+    <form method="POST" action="/signup" class="signup-form">
+      <div class="input-field">
+        <input type="text" name="username" required>
+        <label for="username">Username</label>
+      </div>
+      <div class="input-field">
+        <input type="email" name="email" required>
+        <label for="email">Email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" name="password" required>
+        <label for="password">Password</label>
+
+        <p>Already have an account?<a href="/login"> Login</a></p>
+      </div>
+      <button class="btn waves-effect waves-light"><a href="/temp">Sign Up</a></button>
+      <a href="/exercises" class="btn btn-primary">Go to Exercises Page</a>
+    </form>
+  </div>
+</div>
+
+
+</body>
+</html>

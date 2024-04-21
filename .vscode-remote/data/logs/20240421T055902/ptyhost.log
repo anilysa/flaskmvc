@@ -1,0 +1,16 @@
+2024-04-21 06:04:05.506 [info] Expanding terminal instance, old id 7df2c398-1 -> new id undefined
+2024-04-21 06:04:05.507 [info] Expanding terminal instance, old id 7df2c398-2 -> new id undefined
+2024-04-21 06:04:10.520 [warning] Persistent process "2": Process had no disconnect runners but was an orphan
+2024-04-21 06:04:10.520 [info] Persistent process reconnection "2"
+2024-04-21 06:04:10.634 [warning] Persistent process "1": Process had no disconnect runners but was an orphan
+2024-04-21 06:04:10.634 [info] Persistent process reconnection "1"
+2024-04-21 06:04:10.670 [info] Persistent process "2": Replaying 2438 chars and 1 size events
+2024-04-21 06:04:10.975 [info] Persistent process "1": Replaying 66 chars and 1 size events
+2024-04-21 06:07:30.579 [info] Expanding terminal instance, old id 7df2c398-1 -> new id undefined
+2024-04-21 06:07:30.580 [info] Expanding terminal instance, old id 7df2c398-2 -> new id undefined
+2024-04-21 06:07:35.305 [warning] Persistent process "2": Process had no disconnect runners but was an orphan
+2024-04-21 06:07:35.305 [info] Persistent process reconnection "2"
+2024-04-21 06:07:35.333 [warning] Persistent process "1": Process had no disconnect runners but was an orphan
+2024-04-21 06:07:35.333 [info] Persistent process reconnection "1"
+2024-04-21 06:07:35.434 [info] Persistent process "2": Replaying 2438 chars and 1 size events
+2024-04-21 06:07:35.463 [info] Persistent process "1": Replaying 66 chars and 1 size events

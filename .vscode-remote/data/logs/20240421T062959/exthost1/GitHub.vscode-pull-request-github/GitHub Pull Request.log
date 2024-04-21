@@ -1,0 +1,13 @@
+2024-04-21 06:30:06.730 [warning] /home/gitpod/.ssh/config: ENOENT: no such file or directory, open '/home/gitpod/.ssh/config'
+2024-04-21 06:30:06.730 [info] Activation> Extension version: 0.86.1
+2024-04-21 06:30:08.015 [info] Looking for git repository
+2024-04-21 06:30:08.015 [info] Found 0 repositories during activation
+2024-04-21 06:30:08.015 [info] Git repository found, initializing review manager and pr tree view.
+2024-04-21 06:30:08.019 [info] Registering git provider
+2024-04-21 06:30:08.019 [info] Review+0> Validate state in progress
+2024-04-21 06:30:08.019 [info] Review+0> Validating state...
+2024-04-21 06:30:08.153 [info] Found GitHub remote for folder /workspace/flaskmvc
+2024-04-21 06:30:08.402 [info] Trying to use globalState for assignableUsers.
+2024-04-21 06:30:08.524 [info] Review+0> No matching pull request metadata found locally for current branch main
+2024-04-21 06:30:08.790 [info] Using globalState assignableUsers for 1.
+2024-04-21 06:30:09.230 [info] Review+0> No matching pull request metadata found on GitHub for current branch main

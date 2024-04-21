@@ -1,0 +1,36 @@
+2024-04-20 01:47:02.333 [info] Extension host with pid 988 started
+2024-04-20 01:47:02.333 [error] Error: EEXIST: file already exists, open '/workspace/.vscode-remote/data/User/workspaceStorage/7df2c398/vscode.lock'
+2024-04-20 01:47:02.336 [info] Lock '/workspace/.vscode-remote/data/User/workspaceStorage/7df2c398/vscode.lock': Could not acquire lock, checking if the file is stale.
+2024-04-20 01:47:02.336 [info] Lock '/workspace/.vscode-remote/data/User/workspaceStorage/7df2c398/vscode.lock': The lock does not look stale, elapsed: 104 ms, giving up.
+2024-04-20 01:47:02.336 [error] Error: EEXIST: file already exists, open '/workspace/.vscode-remote/data/User/workspaceStorage/7df2c398-1/vscode.lock'
+2024-04-20 01:47:02.337 [info] Lock '/workspace/.vscode-remote/data/User/workspaceStorage/7df2c398-1/vscode.lock': Could not acquire lock, checking if the file is stale.
+2024-04-20 01:47:02.337 [info] Lock '/workspace/.vscode-remote/data/User/workspaceStorage/7df2c398-1/vscode.lock': The pid 20046 appears to be gone.
+2024-04-20 01:47:02.337 [info] Lock '/workspace/.vscode-remote/data/User/workspaceStorage/7df2c398-1/vscode.lock': Deleting a stale lock.
+2024-04-20 01:47:02.344 [info] Lock '/workspace/.vscode-remote/data/User/workspaceStorage/7df2c398-1/vscode.lock': Lock acquired.
+2024-04-20 01:47:03.050 [info] ExtensionService#_doActivateExtension gitpod.gitpod-web, startup: false, activationEvent: 'onView:gitpod.portsView'
+2024-04-20 01:47:03.222 [info] ExtensionService#_doActivateExtension vscode.html-language-features, startup: false, activationEvent: 'onLanguage:html'
+2024-04-20 01:47:03.223 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-04-20 01:47:03.901 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-04-20 01:47:03.908 [info] ExtensionService#_doActivateExtension vscode.npm, startup: true, activationEvent: 'workspaceContains:package.json'
+2024-04-20 01:47:04.193 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-04-20 01:47:04.193 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-04-20 01:47:04.825 [info] Eager extensions activated
+2024-04-20 01:47:04.825 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-04-20 01:47:04.825 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-04-20 01:47:04.826 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onStartupFinished', root cause: GitHub.vscode-pull-request-github
+2024-04-20 01:47:05.189 [info] ExtensionService#_doActivateExtension redhat.vscode-yaml, startup: false, activationEvent: 'onLanguage:yaml'
+2024-04-20 01:47:05.532 [info] ExtensionService#_doActivateExtension GitHub.vscode-pull-request-github, startup: false, activationEvent: 'onStartupFinished'
+2024-04-20 01:47:05.907 [warning] [redhat.vscode-yaml] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[yaml]', provide the URI of a resource or 'null' for any resource.
+2024-04-20 01:47:05.908 [warning] [redhat.vscode-yaml] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[yaml]', provide the URI of a resource or 'null' for any resource.
+2024-04-20 02:20:47.933 [warning] [redhat.vscode-yaml] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[yaml]', provide the URI of a resource or 'null' for any resource.
+2024-04-20 02:20:48.191 [warning] [redhat.vscode-yaml] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[yaml]', provide the URI of a resource or 'null' for any resource.
+2024-04-20 02:20:48.316 [warning] [redhat.vscode-yaml] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[yaml]', provide the URI of a resource or 'null' for any resource.
+2024-04-20 02:20:49.342 [warning] [redhat.vscode-yaml] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[yaml]', provide the URI of a resource or 'null' for any resource.
+2024-04-20 02:20:49.386 [warning] [redhat.vscode-yaml] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[yaml]', provide the URI of a resource or 'null' for any resource.
+2024-04-20 02:20:49.436 [warning] [redhat.vscode-yaml] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[yaml]', provide the URI of a resource or 'null' for any resource.
+2024-04-20 02:20:49.574 [warning] [redhat.vscode-yaml] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[yaml]', provide the URI of a resource or 'null' for any resource.
+2024-04-20 02:20:49.575 [warning] [redhat.vscode-yaml] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[yaml]', provide the URI of a resource or 'null' for any resource.
+2024-04-20 02:20:52.245 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-04-20 02:20:52.245 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-04-20 02:30:58.325 [warning] [redhat.vscode-yaml] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[yaml]', provide the URI of a resource or 'null' for any resource.
+2024-04-20 02:30:59.556 [warning] [redhat.vscode-yaml] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[yaml]', provide the URI of a resource or 'null' for any resource.

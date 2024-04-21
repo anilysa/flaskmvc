@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+{% block title %}Weekly Workout Routine{% endblock %}
+{% block page %}Weekly Workout Routine{% endblock %}
+
+{% block content %}
+    <header>
+        <h1 style="color: white;">Workout App
+            <img src="https://www.vectorkhazana.com/assets/images/products/Dumbbell_Svg.png">
+        </h1>
+        <nav class="navbar">
+            <div class="navbar-links">
+                <a href="/temp">Home</a>
+                <a href="/routine">Workout Routine</a>
+                <a href="/view">Routine View</a>
+                <a href="/">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="card-container" id="routine-display">
+        <!-- Workout routine will be displayed here -->
+    </div>
+
+    <button id="edit-button" class="card-button">Edit</button>
+
+    <script>
+        // Function to fetch workouts from CSV data
+        function fetchWorkouts() {
+            // Fetch CSV data using fetch API
+            fetch('{{ url_for("static", filename="dataset.csv") }}')
+                .then(response => response.text())
+                .then(data => {
+                    // Parse CSV data
+                    const workouts = Papa.parse(data, { header: true }).data;
+                    // Display routine using fetched workouts
+                    displayRoutine(workouts);
+                })
+                .catch(error => console.error('Error fetching workouts:', error));
+        }
+
+        // Retrieve saved routine from localStorage
+        var savedRoutine = JSON.parse(localStorage.getItem("routine"));
+
+        // Function to display the saved routine
+        function displayRoutine(workouts) {
+            var routineDisplay = document.getElementById("routine-display");
+            routineDisplay.innerHTML = ""; // Clear existing content
+
+            if (savedRoutine) {
+                var daysOfWeek = Object.keys(savedRoutine);
+                daysOfWeek.forEach(day => {
+                    var exercises = savedRoutine[day];
+                    var card = document.createElement("div");
+                    card.classList.add("card");
+
+                    var cardContent = document.createElement("div");
+                    cardContent.classList.add("card-content");
+
+                    var dayHeading = document.createElement("h2");
+                    dayHeading.textContent = day;
+
+                    var exerciseList = document.createElement("ul");
+                    exercises.forEach(exercise => {
+                        var exerciseItem = document.createElement("li");
+                        // Find the workout details based on exercise name
+                        var workout = workouts.find(workout => workout.Title === exercise);
+                        exerciseItem.textContent = workout ? workout.Title : exercise;
+                        exerciseList.appendChild(exerciseItem);
+                    });
+
+                    cardContent.appendChild(dayHeading);
+                    cardContent.appendChild(exerciseList);
+                    card.appendChild(cardContent);
+                    routineDisplay.appendChild(card);
+                });
+            } else {
+                var noRoutineMessage = document.createElement("p");
+                noRoutineMessage.textContent = "No routine saved.";
+                routineDisplay.appendChild(noRoutineMessage);
+            }
+        }
+
+        // Function to handle edit button click
+        document.getElementById("edit-button").addEventListener("click", function() {
+            // Remove existing confirm button if it exists
+            var existingConfirmButton = document.getElementById("confirm-button");
+            if (existingConfirmButton) {
+                existingConfirmButton.remove();
+            }
+
+            // Show delete buttons for each exercise
+            var exerciseItems = document.querySelectorAll(".card-content ul li");
+            exerciseItems.forEach(item => {
+                var deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.classList.add("card-button"); // Add the card-button class
+                deleteButton.addEventListener("click", function() {
+                    // Remove the exercise from the saved routine
+                    var day = item.closest(".card-content").querySelector("h2").textContent;
+                    var index = Array.from(item.parentNode.children).indexOf(item);
+                    savedRoutine[day].splice(index, 1);
+                    // Update the display
+                    displayRoutine();
+                });
+                // Append delete button to the exercise item
+                item.appendChild(deleteButton);
+            });
+
+            // Create confirm button
+            var confirmButton = document.createElement("button");
+            confirmButton.id = "confirm-button"; // Add id for easy removal
+            confirmButton.textContent = "Confirm";
+            confirmButton.classList.add("card-button"); // Add the card-button class
+            confirmButton.addEventListener("click", function() {
+                // Update the routine in localStorage
+                localStorage.setItem("routine", JSON.stringify(savedRoutine));
+                // Re-render the routine display
+                displayRoutine();
+            });
+
+            // Append confirm button to the page
+            document.body.appendChild(confirmButton);
+        });
+
+        // Call the fetchWorkouts function when the page loads
+        fetchWorkouts();
+    </script>
+{% endblock %}

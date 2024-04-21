@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+  
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+     <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Workout App - {% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+    <h1> Workout App 
+      <img src="https://www.vectorkhazana.com/assets/images/products/Dumbbell_Svg.png"> 
+     </img>
+    </h1>
+      <nav class="navbar">
+          <div class="navbar-links">
+            <a href="/temp">Home</a>
+            <a href="/workout">Workouts</a>
+            <a href="/routine">Workout Routine</a>
+            <a href="/view">Routine View</a>
+            <a href="/">Logout</a>
+          </div>
+      </nav>
+    </header>
+    <div class="container" id="content">{% block content %}{% endblock %}</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      //  M.AutoInit();
+
+      //   {% with messages = get_flashed_messages() %}
+      //     {% if messages %}
+      //         {% for message in messages %}
+      //         M.toast({html: '{{message}}'})
+      //         {% endfor %}
+      //     {% endif %}
+      //   {% endwith %}
+       
+    </script>
+  </body>
+</html>
