@@ -1,53 +1,37 @@
 import os
-from flask import Flask, render_template, redirect, url_for
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, render_template, request, jsonify
 from flask_uploads import DOCUMENTS, IMAGES, TEXT, UploadSet, configure_uploads
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
-from werkzeug.datastructures import  FileStorage
-from flask_login import LoginManager, login_required, login_user, logout_user, current_user
+from werkzeug.datastructures import FileStorage
+import csv
 
 from App.database import init_db
 from App.config import load_config
-
-from App.controllers import (
-    setup_jwt,
-    add_auth_context
-)
-
-from App.views import views
-
-# # Configure Flask App
-# app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# app.config['SECRET_KEY'] = 'MySecretKey'
-# app.config['JWT_ACCESS_COOKIE_NAME'] = 'access_token'
-# app.config['JWT_REFRESH_COOKIE_NAME'] = 'refresh_token'
-# app.config["JWT_TOKEN_LOCATION"] = ["cookies", "headers"]
-# app.config["JWT_COOKIE_SECURE"] = True
-# app.config["JWT_SECRET_KEY"] = "super-secret"
-# app.config["JWT_COOKIE_CSRF_PROTECT"] = False
-# app.config['JWT_HEADER_TYPE'] = ""
-# app.config['JWT_HEADER_NAME'] = "Cookie"
-
-
-# # Initialize App 
-# db.init_app(app)
-# app.app_context().push()
-# CORS(app)
-# jwt = JWTManager(app)
-
-# #configure flask app
-# app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://plannerdb_049p_user:Krn1KBahuPdvkEidAZDf05fEUgzxLRDd@dpg-co8v3420si5c739402fg-a/plannerdb_049p'
-# db = SQLAlchemy(app)
-
-# app.config['secret key'] = 'secret key'
+from App.controllers import setup_jwt, add_auth_context, get_all_exercises
+from App.views import views, setup_admin
 
 def add_views(app):
     for view in views:
         app.register_blueprint(view)
+
+def process_csv():
+    dataset_file = 'dataset.csv'  # Modify this line to specify the path to your dataset
+    exercises = []
+    with open(dataset_file, 'r') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            exercises.append({
+                "Title": row['Title'],
+                "Desc": row['Desc'],
+                "Type": row['Type'],
+                "BodyPart": row['BodyPart'],
+                "Equipment": row['Equipment'],
+                "Level": row['Level'],
+                "Rating": float(row['Rating']),
+                "RatingDesc": row['RatingDesc']
+            })
+    return exercises
 
 def create_app(overrides={}):
     app = Flask(__name__, static_url_path='/static')
@@ -59,6 +43,7 @@ def create_app(overrides={}):
     add_views(app)
     init_db(app)
     jwt = setup_jwt(app)
+    setup_admin(app)
 
     @jwt.invalid_token_loader
     @jwt.unauthorized_loader
@@ -67,52 +52,67 @@ def create_app(overrides={}):
 
     app.app_context().push()
 
-    @app.route('/')
-    def index():
-        return render_template('index.html')
-
-    @app.route('/temp')
-    def temp():
-        return render_template('temp.html')
-
-    @app.route('/signup')
-    def signup():
-        return render_template('temp.html')
-
-    @app.route('/workout')
-    def workout():
-        return render_template('workout.html')
-
-    @app.route('/routine')
-    def routine():
-        return render_template('routine.html')
-
     @app.route('/login')
     def login():
-        return render_template('login.html')
-
-    @app.route('/logout')
-    def logout():
         return render_template('login.html')
 
     @app.route('/view')
     def view():
         return render_template('routineview.html')
 
+    @app.route('/temp')
+    def temp():
+        exercises = get_all_exercises()
+        return render_template('temp.html', exercises=exercises)
 
-    @app.route('/add_exercise', methods=['POST'])
+    @app.route('/exercise/info/<int:exercise_id>', methods=['GET'])
+    def get_exercise_info(exercise_id):
+        exercise = Exercise.query.get(exercise_id)
+        if exercise:
+            return jsonify(exercise.get_exercise_info()), 200
+        else:
+            return jsonify({'error': 'Exercise not found'}), 404
+
+    @app.route('/exercise/view', methods=['GET'])
+    def display_exercises():
+        exercises = Exercise.query.all()
+        return render_template('exercises.html', exercises=exercises)
+        
+    @app.route('/exercise/add', methods=['POST'])
     def add_exercise():
         exercise = request.form['exercise']
         day = request.form['day']
         # Here you can add the exercise to the routine and render the new page
         return render_template('routineview.html', exercise=exercise, day=day)
 
-# please dont remove code from above, if you need to comment it off
+    def load_exercises_from_csv(file_path):
+        exercises = []
+        with open(file_path, 'r', newline='') as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                if 'name' in row:  # Check if 'name' key exists in the row
+                    exercises.append(row)
+                else:
+                    print("Warning: 'name' key not found in a row. Skipping this row.")
+        return exercises
+
+    @app.route('/workout')
+    def workout():
+        return render_template('workout.html')
 
 
+    @app.route('/workout/view/<int:user_id>', methods=['GET'])
+    def view_workout(user_id):
+        return render_template('workout.html')
 
-   
+    @app.route('/routine')
+    def get_routines():
+        return render_template('routine.html')
+
+    @app.route('/routine/view/<int:routine_id>')
+    def view_routine(routine_id):
+        return render_template('routineview.html')
+
 
 
     return app
-

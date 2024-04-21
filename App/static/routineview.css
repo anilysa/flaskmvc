@@ -1,146 +1,146 @@
 /* Reset default margins, paddings, and box-sizing */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #eeeeee;
-  color: #222831;
-  line-height: 1.6;
-}
-
-/* Title styles */
-header h1 {
-  font-size: 36px; /* Adjust font size */
-  text-align: center; /* Center-align header contents */
-  margin-bottom: 0; /* Adjusted margin */
-  color: #eeeeee; /* Match text color with navbar links */
-  padding-left: 70px; /* Add padding to the left */
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Add a text shadow for depth */
-  background-color: #31363f;
-}
-
-
-h1 img {
-  width: 100px;
-  height: auto;
-  display: inline-block;
-  vertical-align: middle; /* Align the image vertically in line with text */
-  margin-left: 20px; /* Add margin to the left */
-  padding-bottom: 10px;
-}
-
-.card-content h2 {
-  text-transform: capitalize;
-}
-
-/* Navigation bar styles */
-nav {
-  background-color: #31363f;
-  padding: 10px 20px;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
- 
-}
-
-/* Brand logo styles */
-.brand-logo {
-  font-size: 36px;
-  color: #eeeeee;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin-left: 20px;
-}
-
-/* Navigation links styles */
-.navbar-links a {
-  color: #eeeeee;
-  text-decoration: none;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  position: relative;
-}
-
-.navbar-links a::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: transparent;
-  transition: background-color 0.3s ease;
-}
-
-.navbar-links a:hover::before {
-  background-color: #76ABAE;
-}
-
-/* routineview.css */
-
-.card-container {
-    display: flex; /* Use flexbox */
-    flex-wrap: wrap; /* Allow wrapping to the next line */
-    justify-content: flex-start; /* Align items starting from the left */
-    padding: 40px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
   
-  .card {
-    background-color: #f4f4f4; /* Background color of the card */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
-    margin: 0 20px 20px 0; /* Spacing between and around cards */
-    padding: 20px; /* Padding inside the card */
-    flex: 0 0 calc(33.33% - 20px); /* Each card takes up one-third of the container width with spacing */
-    box-sizing: border-box; /* Include padding and border in the width */
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    color: #222831;
+    line-height: 1.6;
   }
   
-  .card h2 {
-    margin-bottom: 10px; /* Spacing below the heading */
-    text-align: center; /* Center align the heading */
-    font-size: 16px; /* Set smaller font size */
+  /* Title styles */
+  header h1 {
+    font-size: 36px; /* Adjust font size */
+    text-align: center; /* Center-align header contents */
+    margin-bottom: 0; /* Adjusted margin */
+    color: #eeeeee; /* Match text color with navbar links */
+    padding-left: 70px; /* Add padding to the left */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Add a text shadow for depth */
+    background-color: #31363f;
   }
   
-  .card ul {
-    list-style-type: none; /* Remove bullets from the list */
-    padding: 0; /* Remove default padding */
+  
+  h1 img {
+    width: 100px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle; /* Align the image vertically in line with text */
+    margin-left: 20px; /* Add margin to the left */
+    padding-bottom: 10px;
   }
   
-  .card ul li {
-    margin-bottom: 5px; /* Spacing between list items */
+  .card-content h2 {
+    text-transform: capitalize;
   }
   
-    /* Button styles */
-    .card-button {
-        display: inline-block;
-        padding: 8px 16px; /* Adjusted padding */
-        font-size: 14px; /* Adjusted font size */
-        background-color: #76ABAE; /* Match background color */
-        color: white; /* Text color */
-        border: none;
-        border-radius: 6px; /* Adjusted border radius */
-        cursor: pointer;
-        transition-duration: 0.4s;
+  /* Navigation bar styles */
+  nav {
+    background-color: #31363f;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+   
+  }
+  
+  /* Brand logo styles */
+  .brand-logo {
+    font-size: 36px;
+    color: #eeeeee;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-left: 20px;
+  }
+  
+  /* Navigation links styles */
+  .navbar-links a {
+    color: #eeeeee;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: relative;
+  }
+  
+  .navbar-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-links a:hover::before {
+    background-color: #76ABAE;
+  }
+  
+  /* routineview.css */
+  
+  .card-container {
+      display: flex; /* Use flexbox */
+      flex-wrap: wrap; /* Allow wrapping to the next line */
+      justify-content: flex-start; /* Align items starting from the left */
+      padding: 40px;
     }
-
-    .card-button:hover {
-        background-color: #658f93; /* Darker Green on hover */
+    
+    .card {
+      background-color: #f4f4f4; /* Background color of the card */
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+      margin: 0 20px 20px 0; /* Spacing between and around cards */
+      padding: 20px; /* Padding inside the card */
+      flex: 0 0 calc(33.33% - 20px); /* Each card takes up one-third of the container width with spacing */
+      box-sizing: border-box; /* Include padding and border in the width */
     }
-
-    .card-button:focus {
-        outline: none;
+    
+    .card h2 {
+      margin-bottom: 10px; /* Spacing below the heading */
+      text-align: center; /* Center align the heading */
+      font-size: 16px; /* Set smaller font size */
     }
-
-    .card-button:active {
-        background-color: #4b6b6f; /* Active Green */
+    
+    .card ul {
+      list-style-type: none; /* Remove bullets from the list */
+      padding: 0; /* Remove default padding */
     }
-
+    
+    .card ul li {
+      margin-bottom: 5px; /* Spacing between list items */
+    }
+    
+      /* Button styles */
+      .card-button {
+          display: inline-block;
+          padding: 8px 16px; /* Adjusted padding */
+          font-size: 14px; /* Adjusted font size */
+          background-color: #76ABAE; /* Match background color */
+          color: white; /* Text color */
+          border: none;
+          border-radius: 6px; /* Adjusted border radius */
+          cursor: pointer;
+          transition-duration: 0.4s;
+      }
   
+      .card-button:hover {
+          background-color: #658f93; /* Darker Green on hover */
+      }
+  
+      .card-button:focus {
+          outline: none;
+      }
+  
+      .card-button:active {
+          background-color: #4b6b6f; /* Active Green */
+      }
+  
+    

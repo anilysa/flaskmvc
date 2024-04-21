@@ -1,121 +1,122 @@
 /* Global styles */
 html, body {
-  margin: 0;
-  padding: 0;
-  background-color: #eeeeee;
-  font-family: Arial, sans-serif;
-  color: #333; /* Added consistent text color */
-}
-
-/* Title styles */
-header h1 {
-  margin-top: 0;
-  font-size: 36px;
-  background-color: #31363f;
-  text-align: center;
-  margin-bottom: 20px; /* Increased spacing below the title */
-  color: #eeeeee;
-  padding: 20px; /* Increased padding for better visual appeal */
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-h1 img {
-  width: 100px;
-  height: auto;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 20px;
-}
-
-/* Form container */
-.form-container {
-  max-width: 400px;
-  margin: 40px auto; /* Increased margin for better centering */
-  padding: 20px; /* Increased padding for better spacing */
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
-}
-
-/* Input fields */
-.input-field {
-  margin-bottom: 10px; /* Decreased spacing between input fields */
-}
-
-.input-field input {
-  width: 100%;
-  padding: 10px; /* Decreased padding for smaller input field appearance */
-  font-size: 10px; /* Decreased font size for smaller text */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: border-color 0.3s; /* Added transition for smoother effect */
-}
-
-.input-field input:focus {
-  outline: none;
-  border-color: #5c87d6;
-}
-
-/* Labels */
-.input-field label {
-  margin-bottom: 5px; /* Decreased spacing for better alignment */
-  font-size: 13px; /* Decreased font size for smaller text */
-}
-
-/* Submit button */
-.btn {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px; /* Decreased font size for smaller button */
-  background-color: #76ABAE;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #4B888D;
-}
-
-/* Card container */
-.card {
-  max-width: 400px;
-  margin: 50px auto; /* Increased margin for better centering */
-  padding: 20px; /* Decreased padding for smaller card */
-  background-color: #fff;
-  overflow-y: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Card content */
-.card-content {
-  max-height: 50vh; /* Limited max height to fit smaller content */
-  padding: 10px; /* Decreased padding for smaller content */
-  padding-right: 25px;
-}
-
-/* Text inside the card */
-.card-content p, .card-content ul {
-  font-size: 13px; /* Decreased font size for smaller text */
-  margin-bottom: 5px; /* Decreased margin bottom for tighter spacing */
-}
-
-/* Headers inside the card */
-.card-content h1 {
-  font-size: 20px; /* Decreased font size for smaller headers */
-  margin-bottom: 10px; /* Decreased margin bottom for tighter spacing */
-  text-align: center;
-}
-
-/* Hyperlink */
-a {
-  color: #333;
-  text-decoration: none;
-}
-
-a:hover {
-  background-color: #f0f0f0;
-}
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+    font-family: Arial, sans-serif;
+    color: #333; /* Added consistent text color */
+  }
+  
+  /* Title styles */
+  header h1 {
+    margin-top: 0;
+    font-size: 36px;
+    background-color: #31363f;
+    text-align: center;
+    margin-bottom: 20px; /* Increased spacing below the title */
+    color: #eeeeee;
+    padding: 20px; /* Increased padding for better visual appeal */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  h1 img {
+    width: 100px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+  }
+  
+  /* Form container */
+  .form-container {
+    max-width: 400px;
+    margin: 40px auto; /* Increased margin for better centering */
+    padding: 20px; /* Increased padding for better spacing */
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+  }
+  
+  /* Input fields */
+  .input-field {
+    margin-bottom: 10px; /* Decreased spacing between input fields */
+  }
+  
+  .input-field input {
+    width: 100%;
+    padding: 10px; /* Decreased padding for smaller input field appearance */
+    font-size: 10px; /* Decreased font size for smaller text */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s; /* Added transition for smoother effect */
+  }
+  
+  .input-field input:focus {
+    outline: none;
+    border-color: #5c87d6;
+  }
+  
+  /* Labels */
+  .input-field label {
+    margin-bottom: 5px; /* Decreased spacing for better alignment */
+    font-size: 13px; /* Decreased font size for smaller text */
+  }
+  
+  /* Submit button */
+  .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px; /* Decreased font size for smaller button */
+    background-color: #76ABAE;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #4B888D;
+  }
+  
+  /* Card container */
+  .card {
+    max-width: 400px;
+    margin: 50px auto; /* Increased margin for better centering */
+    padding: 20px; /* Decreased padding for smaller card */
+    background-color: #fff;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Card content */
+  .card-content {
+    max-height: 50vh; /* Limited max height to fit smaller content */
+    padding: 10px; /* Decreased padding for smaller content */
+    padding-right: 25px;
+  }
+  
+  /* Text inside the card */
+  .card-content p, .card-content ul {
+    font-size: 13px; /* Decreased font size for smaller text */
+    margin-bottom: 5px; /* Decreased margin bottom for tighter spacing */
+  }
+  
+  /* Headers inside the card */
+  .card-content h1 {
+    font-size: 20px; /* Decreased font size for smaller headers */
+    margin-bottom: 10px; /* Decreased margin bottom for tighter spacing */
+    text-align: center;
+  }
+  
+  /* Hyperlink */
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    background-color: #f0f0f0;
+  }
+  

@@ -1,106 +1,80 @@
-<!-- this is the home page -->
-
 {% extends "layout.html" %}
 {% block title %}Workout App{% endblock %}
 {% block page %}Workout App{% endblock %}
 
-{{ super() }}
-
 {% block content %}
-    <!-- Search Bar in Navigation -->
-    
-        <!-- Search Form -->
+
+        <!-- Search Bar -->
         <form class="navbar-form" onsubmit="searchExercises(); return false;">
             <input type="text" id="search-input" placeholder="Search for exercises...">
             <button type="submit">Search</button>
         </form>
 
+        <!-- Featured Workouts -->
+        <section class="featured-workouts">
+        <h2>Browse Workouts</h2>
 
-    <!-- Featured Workouts -->
-    <section class="featured-workouts">
-        <h2>Featured Workouts</h2>
         <div id="workouts-list" class="workout-card">
-            <!-- Workouts will be dynamically added here -->
+            <!-- Displayed after filtering -->
+            {% for exercise in exercises %}
+                <div class="exercise-card" id="exercise{{ loop.index }}">
+                    <h3>{{ exercise['Title'] }}</h3>
+                    <p>Type: {{ exercise['Type'] }}</p>
+                    <p>Body Part: {{ exercise['BodyPart'] }}</p>
+                    <p>Equipment: {{ exercise['Equipment'] }}</p>
+                    <p>Level: {{ exercise['Level'] }}</p>
+                    <p>Rating: {{ exercise['Rating'] }}</p>
+                    <p>Rating Description: {{ exercise['RatingDesc'] }}</p>
+                    <!-- <p>Description: {{ exercise['Desc'] }}</p> -->
+                     <!-- Replace the description paragraph with a button -->
+                    <button class="description-btn" onclick="toggleDescription(this)">Show Description</button>
+                    <p class="exercise-description" style="display: none;">Description: {{ exercise['Desc'] }}</p>
+                </div>
+            {% endfor %}
         </div>
     </section>
+
     <script>
-        // Function to fetch workouts from the API for a given muscle group
-        function fetchWorkoutsByMuscle(muscle) {
-            var api_url = 'https://api.api-ninjas.com/v1/exercises?muscle=' + muscle;
-            return fetch(api_url, {
-                headers: {
-                    'X-Api-Key': 'MNTs3LU671IWeM9bxMaF0A==thhK8SBpIUrdU0y4'
-                }
-            }).then(response => response.json());
-        }
-
-        // Function to fetch workouts from the API for all muscle groups
-        function fetchAllWorkouts() {
-            var muscleGroups = ['abdominals', 'abductors', 'adductors', 'biceps', 'calves', 'chest', 'forearms', 'glutes', 'hamstrings', 'lats', 'lower_back', 'middle_back', 'neck', 'quadriceps', 'traps', 'triceps'];
-            var apiPromises = muscleGroups.map(fetchWorkoutsByMuscle);
-
-            return Promise.all(apiPromises)
-                .then(responses => {
-                    // Flatten the array of responses into a single array of workouts
-                    return responses.reduce((acc, curr) => acc.concat(curr), []);
-                });
-        }
-
-        // Function to search exercises
         function searchExercises() {
-            var query = document.getElementById('search-input').value.toLowerCase();
+            var query = document.getElementById('search-input').value.trim().toLowerCase();
 
-            fetchAllWorkouts()
-                .then(workouts => {
-                    // Filter workouts based on search query
-                    var filteredWorkouts = workouts.filter(workout => workout.name.toLowerCase().includes(query));
+            const exerciseCards = document.querySelectorAll('.exercise-card');
+            exerciseCards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const description = card.querySelector('p:nth-child(2)').innerText.toLowerCase();
+                const type = card.querySelector('p:nth-child(3)').innerText.toLowerCase();
+                const bodyPart = card.querySelector('p:nth-child(4)').innerText.toLowerCase();
+                const equipment = card.querySelector('p:nth-child(5)').innerText.toLowerCase();
+                const level = card.querySelector('p:nth-child(6)').innerText.toLowerCase();
+                const rating = card.querySelector('p:nth-child(7)').innerText.toLowerCase();
+                const ratingDesc = card.querySelector('p:nth-child(8)').innerText.toLowerCase();
 
-                    // Display filtered workouts
-                    displayWorkouts(filteredWorkouts);
-                })
-                .catch(error => console.error('Error fetching workouts:', error));
-        }
-
-        // Function to display workouts
-        function displayWorkouts(workouts) {
-            // Process the workouts and create HTML for each workout
-            var workoutsHTML = '';
-            workouts.forEach(workout => {
-                workoutsHTML += '<div class="workout">';
-                workoutsHTML += '<h3>' + workout.name + '</h3>';
-                workoutsHTML += '<p>Type: ' + workout.type + '</p>';
-                workoutsHTML += '<p>Muscle: ' + workout.muscle + '</p>';
-                workoutsHTML += '<p>Equipment: ' + workout.equipment + '</p>';
-                workoutsHTML += '<p>Difficulty: ' + workout.difficulty + '</p>';
-                // Dropdown for Instructions
-                workoutsHTML += '<div class="dropdown">';
-                workoutsHTML += '<button onclick="toggleInstructions(this)" class="dropbtn">Instructions</button>';
-                workoutsHTML += '<div class="dropdown-content" style="display:none">';
-                workoutsHTML += '<p>' + workout.instructions + '</p>';
-                workoutsHTML += '</div>';
-                workoutsHTML += '</div>';
-                // Add more details as needed
-                workoutsHTML += '</div>';
+                if (
+                    title.includes(query) ||
+                    description.includes(query) ||
+                    type.includes(query) ||
+                    bodyPart.includes(query) ||
+                    equipment.includes(query) ||
+                    level.includes(query) ||
+                    rating.includes(query) ||
+                    ratingDesc.includes(query)
+                ) {
+                    card.style.display = 'block'; // Show the card if it matches the query
+                } else {
+                    card.style.display = 'none'; // Hide the card if it doesn't match the query
+                }
             });
-            // Add the HTML to the workouts-list div
-            document.getElementById('workouts-list').innerHTML = workoutsHTML;
         }
 
-        // Function to toggle instructions dropdown
-        function toggleInstructions(button) {
-            var content = button.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
+        function toggleDescription(button) {
+        var description = button.nextElementSibling;
+        if (description.style.display === 'none') {
+            description.style.display = 'block';
+            button.innerText = 'Hide Description';
+        } else {
+            description.style.display = 'none';
+            button.innerText = 'Show Description';
         }
-
-        // Call the fetchAllWorkouts function when the page loads
-        window.onload = function() {
-            fetchAllWorkouts()
-                .then(displayWorkouts)
-                .catch(error => console.error('Error fetching workouts:', error));
-        };
+    }
     </script>
 {% endblock %}

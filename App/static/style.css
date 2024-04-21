@@ -117,71 +117,91 @@ nav {
     cursor: pointer;
 }
 
-/* Featured Workouts styles */
+
+/* Style for the featured workouts section */
 .featured-workouts {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+  }
 
-.featured-workouts h2 {
+  .featured-workouts h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
-
-.workout {
+  
+  /* Style for the exercise cards */
+  .exercise-card {
     background-color: #f9f9f9;
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 15px;
-}
-
-.workout h3 {
+  }
+  
+  /* Style for the exercise title */
+  .exercise-card h3 {
     font-size: 20px;
     margin-bottom: 10px;
-}
-
-.workout p {
+  }
+  
+  /* Style for the exercise details */
+  .exercise-card p {
     margin-bottom: 5px;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #76ABAE;
-    min-width: 1000px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+  }
+  
+  /* Style for the search bar */
+  .navbar-form {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Extend the search bar across the screen */
+    background-color: transparent; /* Remove background color */
+    padding: 10px 20px; /* Match padding with the navigation */
+    border-radius: 5px; /* Match border-radius with the navigation */
+  }
+  
+  /* Style for the search input */
+  #search-input {
+    flex: 1; /* Let the input take up remaining space */
     padding: 10px;
-    top: 100%; /* Position dropdown below the button */
-    left: 0; /* Align dropdown with the button */
-    z-index: 1; /* Ensure dropdown appears above other content */
-}
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    background-color: #fff;
+    color: #222831;
+    margin-right: 10px;
+  }
+  
+  /* Style for the search button */
+  #search-input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #76ABAE;
+    color: #eeeeee;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  /* Style for the search button on hover
+  #search-input[type="submit"]:hover {
+    background-color: #0056b3;
+  } */
+  
 
-.dropdown-content p {
-    margin-bottom: 10px;
-}
-
-.dropbtn {
-    background-color: #76ABAE; /* Light blue */
-    color: #eeeeee; /* Light text */
+  .description-btn {
+    background-color: #76ABAE;
+    color: #eeeeee;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-/* Show dropdown content when button is hovered */
-.dropdown:hover .dropdown-content {
-    display: block;
+.description-btn:hover {
+    background-color: #558B8F; /* Darker shade of blue on hover */
 }
+
+
+
 
 /* Media Query for smaller screens */
 @media (max-width: 768px) {
